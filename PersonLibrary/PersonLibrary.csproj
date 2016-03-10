@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9941375-D0B9-46C7-91CE-28F7626266E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersonLibrary</RootNamespace>
+    <AssemblyName>PersonLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Base\DynamicPersonBase.cs" />
+    <Compile Include="Core\Base\PersonBase.cs" />
+    <Compile Include="Core\Concrete\DynamicPerson.cs" />
+    <Compile Include="Core\Concrete\MultipleAddressesPerson.cs" />
+    <Compile Include="Core\Concrete\Person.cs" />
+    <Compile Include="Core\Concrete\SingleAddressPerson.cs" />
+    <Compile Include="Core\Interface\IDynamicPerson.cs" />
+    <Compile Include="Core\Interface\IMultipleAddressesPerson.cs" />
+    <Compile Include="Core\Interface\IPerson.cs" />
+    <Compile Include="Core\Interface\ISingleAddressPerson.cs" />
+    <Compile Include="Core\Validation\MultipleAddressPersonValidator.cs" />
+    <Compile Include="Core\Validation\PersonValidator.cs" />
+    <Compile Include="Core\Validation\SingleAddressPersonValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\Address\Base\AddressBase.cs" />
+    <Compile Include="Property\Address\Concrete\PersonAddress.cs" />
+    <Compile Include="Property\Address\Interface\IAddress.cs" />
+    <Compile Include="Property\Address\Validation\AddressValidator.cs" />
+    <Compile Include="Property\Occupation\Base\OccupationBase.cs" />
+    <Compile Include="Property\Occupation\Concrete\Occupation.cs" />
+    <Compile Include="Property\Occupation\Interface\IOccupation.cs" />
+    <Compile Include="Property\PersonInfo\Base\PersonInfoBase.cs" />
+    <Compile Include="Property\PersonInfo\Concrete\PersonInfo.cs" />
+    <Compile Include="Property\PersonInfo\Interface\IPersonInfo.cs" />
+    <Compile Include="Property\PersonInfo\Validation\PersonInfoValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\Interface\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
