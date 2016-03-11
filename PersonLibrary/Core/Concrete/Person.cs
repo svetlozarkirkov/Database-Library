@@ -6,11 +6,13 @@
     using PersonLibrary.Core.Validation;
     using PersonLibrary.Property.PersonInfo.Interface;
 
+    /// <summary>
+    /// Base concrete implementation for PERSON
+    /// </summary>
     [Validator(typeof(PersonValidator<IPerson>))]
     public class Person : PersonBase
     {
-        public Person(IPersonInfo personInfo)
-            : base(personInfo)
+        public Person(IPersonInfo personInfo) : base(personInfo)
         {
         }
     }

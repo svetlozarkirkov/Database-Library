@@ -8,20 +8,20 @@
         public AddressValidator()
         {
             RuleFor(personAddress => personAddress.Country)
-                .NotEmpty()
-                .NotNull();
+                .NotNull()
+                .NotEmpty();
 
             RuleFor(personAddress => personAddress.City)
-                .NotEmpty()
-                .NotNull();
+                .NotNull()
+                .NotEmpty();
 
             RuleFor(personAddress => personAddress.Street)
-                .NotEmpty()
-                .NotNull();
+                .NotNull()
+                .NotEmpty();
 
             RuleFor(personAddress => personAddress.PostCode)
-                .NotEmpty()
-                .NotNull();
+                .NotNull()
+                .NotEmpty();
         }
     }
 }
