@@ -1,4 +1,4 @@
-﻿namespace PersonLibrary.Validation.Composite
+﻿namespace PersonLibrary.Utilities.Validation
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,8 @@
             {
                 _additionalValidators.Add(validator);
             }
-            else {
+            else
+            {
                 throw new NotSupportedException(string.Format(
                     "Type {0} is not a base-class or interface implemented by {1}.",
                     typeof(TBase).Name,
@@ -28,9 +29,10 @@
         public override ValidationResult Validate(ValidationContext<T> context)
         {
             var mainErrors = base.Validate(context).Errors;
-            var errorsFromOtherValidators = _additionalValidators.SelectMany(x => x.Validate(context).Errors);
-            var combinedErrors = mainErrors.Concat(errorsFromOtherValidators);
+            var errorsFromOtherValidators = _additionalValidators
+                .SelectMany(x => x.Validate(context).Errors);
 
+            var combinedErrors = mainErrors.Concat(errorsFromOtherValidators);
             return new ValidationResult(combinedErrors);
         }
     }

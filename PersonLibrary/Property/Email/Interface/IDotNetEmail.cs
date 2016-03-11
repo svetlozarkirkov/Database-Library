@@ -1,6 +1,6 @@
 ﻿namespace PersonLibrary.Property.Email.Interface
 {
-    public interface IPersonDotNetEmail : IEmail
+    public interface IDotNetEmail : IEmail
     {
     }
 }

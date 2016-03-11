@@ -1,7 +1,10 @@
 ﻿namespace PersonLibrary.Property.PersonInfo.Base
 {
+    using FluentValidation.Attributes;
     using PersonLibrary.Property.PersonInfo.Interface;
+    using PersonLibrary.Property.PersonInfo.Validation.Interface;
 
+    [Validator(typeof(PersonInfoInterfaceValidator))]
     public abstract class PersonInfoBase : IPersonInfo
     {
         protected PersonInfoBase(string firstName, string surName, string lastName, string egn)

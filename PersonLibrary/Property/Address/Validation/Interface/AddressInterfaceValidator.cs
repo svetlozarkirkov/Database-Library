@@ -1,11 +1,11 @@
-﻿namespace PersonLibrary.Property.Address.Validation.Base
+﻿namespace PersonLibrary.Property.Address.Validation.Interface
 {
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
 
-    public class AddressValidator<T> : AbstractValidator<T> where T : IAddress
+    public class AddressInterfaceValidator : AbstractValidator<IAddress>
     {
-        public AddressValidator()
+        public AddressInterfaceValidator()
         {
             this.RuleFor(personAddress => personAddress.Country)
                 .NotNull()

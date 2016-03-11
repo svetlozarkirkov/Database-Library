@@ -1,10 +1,11 @@
 ﻿namespace PersonLibrary.Property.Email.Validation.Concrete
 {
     using FluentValidation;
-    using PersonLibrary.Property.Email.Concrete;
-    using PersonLibrary.Property.Email.Validation.Base;
+    using PersonLibrary.Property.Email.Interface;
+    using PersonLibrary.Property.Email.Validation.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    public class GeneralEmailValidator : EmailValidator<GeneralEmail>
+    public class GeneralEmailValidator : CompositeValidator<IGeneralEmail>
     {
         /// <summary>
         /// General Email Regex (RFC 5322 Official Standard)
@@ -20,7 +21,8 @@
 
         public GeneralEmailValidator()
         {
-            this.RuleFor(email => email.EmailAddress).NotNull().Matches(GeneralEmailRegex);
+            this.RegisterBaseValidator(new EmailInterfaceValidator());
+            this.RuleFor(email => email.EmailAddress).Matches(GeneralEmailRegex);
         }
     }
 }

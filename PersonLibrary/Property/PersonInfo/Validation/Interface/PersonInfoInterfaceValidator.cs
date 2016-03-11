@@ -1,11 +1,11 @@
-﻿namespace PersonLibrary.Property.PersonInfo.Validation.Base
+﻿namespace PersonLibrary.Property.PersonInfo.Validation.Interface
 {
     using FluentValidation;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    public class PersonInfoValidator<T> : AbstractValidator<T> where T : IPersonInfo
+    public class PersonInfoInterfaceValidator : AbstractValidator<IPersonInfo>
     {
-        public PersonInfoValidator()
+        public PersonInfoInterfaceValidator()
         {
             this.RuleFor(personInfo => personInfo.FirstName)
                 .NotNull()
@@ -21,6 +21,11 @@
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20);
+
+            this.RuleFor(personInfo => personInfo.Egn)
+                .NotNull()
+                .NotEmpty()
+                .Length(10);
         }
     }
 }

@@ -2,12 +2,14 @@
 {
     using FluentValidation;
     using PersonLibrary.Core.Interface;
+    using PersonLibrary.Property.PersonInfo.Validation.Interface;
 
     public class PersonInterfaceValidator : AbstractValidator<IPerson>
     {
         public PersonInterfaceValidator()
         {
-            RuleFor(personBase => personBase.PersonInfo).NotNull();
+            RuleFor(personBase => personBase.PersonInfo)
+                .SetValidator(new PersonInfoInterfaceValidator());
         }
     }
 }

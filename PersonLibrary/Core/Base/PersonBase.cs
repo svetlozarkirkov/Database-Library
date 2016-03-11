@@ -1,11 +1,11 @@
 ﻿namespace PersonLibrary.Core.Base
 {
+    using FluentValidation.Attributes;
     using PersonLibrary.Core.Interface;
+    using PersonLibrary.Core.Validation.Interface;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    /// <summary>
-    /// Main Abstraction for PERSON
-    /// </summary>
+    [Validator(typeof(PersonInterfaceValidator))]
     public abstract class PersonBase : IPerson
     {
         protected PersonBase(IPersonInfo personInfo)

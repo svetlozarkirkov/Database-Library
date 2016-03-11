@@ -2,12 +2,14 @@
 {
     using FluentValidation;
     using PersonLibrary.Core.Interface;
+    using PersonLibrary.Property.Address.Validation.Interface;
 
     public class MultipleAddressesPersonInterfaceValidator : AbstractValidator<IMultipleAddressesPerson>
     {
         public MultipleAddressesPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.Addresses).NotNull();
+            this.RuleFor(person => person.Addresses)
+                .SetCollectionValidator(new AddressInterfaceValidator());
         }
     }
 }
