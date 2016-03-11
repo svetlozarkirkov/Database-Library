@@ -14,26 +14,27 @@
     {
         public MultipleEmailsPerson(IPersonInfo personInfo) : base(personInfo)
         {
-            this.Emails = new List<IEmail>();
+            this.Emails = new List<IPersonGeneralEmail>();
         }
 
-        public MultipleEmailsPerson(IPersonInfo personInfo, IEmail email) : base(personInfo)
-        {
-            this.Emails = new List<IEmail> { email };
-        }
-
-        public MultipleEmailsPerson(IPersonInfo personInfo, IEnumerable<IEmail> emails)
+        public MultipleEmailsPerson(IPersonInfo personInfo, IPersonGeneralEmail email)
             : base(personInfo)
         {
-            this.Emails = new List<IEmail>();
-            ((List<IEmail>)this.Emails).AddRange(emails);
+            this.Emails = new List<IPersonGeneralEmail> { email };
         }
 
-        public IEnumerable<IEmail> Emails { get; }
-
-        public void AddEmail(IEmail email)
+        public MultipleEmailsPerson(IPersonInfo personInfo, IEnumerable<IPersonGeneralEmail> emails)
+            : base(personInfo)
         {
-            ((List<IEmail>)this.Emails).Add(email);
+            this.Emails = new List<IPersonGeneralEmail>();
+            ((List<IPersonGeneralEmail>)this.Emails).AddRange(emails);
+        }
+
+        public IEnumerable<IPersonGeneralEmail> Emails { get; }
+
+        public void AddEmail(IPersonGeneralEmail email)
+        {
+            ((List<IPersonGeneralEmail>)this.Emails).Add(email);
         }
 
         public override string ToString()

@@ -3,7 +3,7 @@
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
 
-    public class DotNetEmailValidator : EmailValidator<IEmail>
+    public class DotNetEmailValidator<T> : AbstractValidator<T> where T : IEmail
     {
         /// <summary>
         /// Dot Net Email Regex

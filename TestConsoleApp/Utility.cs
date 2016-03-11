@@ -2,11 +2,35 @@
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.Reflection;
     using System.Text;
 
     internal static class Utility
     {
+        internal static IEnumerable<Type> GetParentTypes(Type type)
+        {
+            // is there any base type?
+            if ((type == null) || (type.BaseType == null))
+            {
+                yield break;
+            }
+
+            // return all implemented or inherited interfaces
+            foreach (var i in type.GetInterfaces())
+            {
+                yield return i;
+            }
+
+            // return all inherited types
+            var currentBaseType = type.BaseType;
+            while (currentBaseType != null)
+            {
+                yield return currentBaseType;
+                currentBaseType = currentBaseType.BaseType;
+            }
+        }
+
         internal static string var_dump(object obj, int recursion)
         {
             StringBuilder result = new StringBuilder();

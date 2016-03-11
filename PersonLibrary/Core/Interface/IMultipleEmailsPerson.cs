@@ -5,6 +5,6 @@
 
     public interface IMultipleEmailsPerson : IPerson
     {
-        IEnumerable<IEmail> Emails { get; }
+        IEnumerable<IPersonGeneralEmail> Emails { get; }
     }
 }

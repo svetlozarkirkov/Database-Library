@@ -69,9 +69,12 @@
     <Compile Include="Property\Email\Concrete\DotNetEmail.cs" />
     <Compile Include="Property\Email\Concrete\Email.cs" />
     <Compile Include="Property\Email\Concrete\GeneralEmail.cs" />
+    <Compile Include="Property\Email\Concrete\PersonDotNetEmail.cs" />
+    <Compile Include="Property\Email\Concrete\PersonGeneralEmail.cs" />
     <Compile Include="Property\Email\Interface\IEmail.cs" />
+    <Compile Include="Property\Email\Interface\IPersonDotNetEmail.cs" />
+    <Compile Include="Property\Email\Interface\IPersonGeneralEmail.cs" />
     <Compile Include="Property\Email\Validation\DotNetEmailValidator.cs" />
-    <Compile Include="Property\Email\Validation\EmailValidator.cs" />
     <Compile Include="Property\Email\Validation\GeneralEmailValidator.cs" />
     <Compile Include="Property\Occupation\Base\OccupationBase.cs" />
     <Compile Include="Property\Occupation\Concrete\Occupation.cs" />
