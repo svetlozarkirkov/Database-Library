@@ -1,4 +1,4 @@
-﻿namespace PersonLibrary.Property.Address.Validation
+﻿namespace PersonLibrary.Property.Address.Validation.Base
 {
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
@@ -7,19 +7,19 @@
     {
         public AddressValidator()
         {
-            RuleFor(personAddress => personAddress.Country)
+            this.RuleFor(personAddress => personAddress.Country)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(personAddress => personAddress.City)
+            this.RuleFor(personAddress => personAddress.City)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(personAddress => personAddress.Street)
+            this.RuleFor(personAddress => personAddress.Street)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(personAddress => personAddress.PostCode)
+            this.RuleFor(personAddress => personAddress.PostCode)
                 .NotNull()
                 .NotEmpty();
         }

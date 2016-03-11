@@ -3,11 +3,11 @@
     using FluentValidation.Attributes;
     using PersonLibrary.Core.Base;
     using PersonLibrary.Core.Interface;
-    using PersonLibrary.Core.Validation;
+    using PersonLibrary.Core.Validation.Interface;
     using PersonLibrary.Property.Email.Interface;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    [Validator(typeof(SingleEmailPersonValidator))]
+    [Validator(typeof(SingleEmailPersonInterfaceValidator))]
     public class SingleEmailPerson : PersonBase, ISingleEmailPerson
     {
         public SingleEmailPerson(IPersonInfo personInfo, IPersonGeneralEmail email)

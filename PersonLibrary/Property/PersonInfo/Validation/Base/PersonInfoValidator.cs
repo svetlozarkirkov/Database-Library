@@ -1,4 +1,4 @@
-﻿namespace PersonLibrary.Property.PersonInfo.Validation
+﻿namespace PersonLibrary.Property.PersonInfo.Validation.Base
 {
     using FluentValidation;
     using PersonLibrary.Property.PersonInfo.Interface;
@@ -7,17 +7,17 @@
     {
         public PersonInfoValidator()
         {
-            RuleFor(personInfo => personInfo.FirstName)
+            this.RuleFor(personInfo => personInfo.FirstName)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20);
 
-            RuleFor(personInfo => personInfo.SurName)
+            this.RuleFor(personInfo => personInfo.SurName)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20);
 
-            RuleFor(personInfo => personInfo.LastName)
+            this.RuleFor(personInfo => personInfo.LastName)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20);

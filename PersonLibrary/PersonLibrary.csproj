@@ -55,16 +55,18 @@
     <Compile Include="Core\Interface\IPerson.cs" />
     <Compile Include="Core\Interface\ISingleAddressPerson.cs" />
     <Compile Include="Core\Interface\ISingleEmailPerson.cs" />
-    <Compile Include="Core\Validation\MultipleAddressPersonValidator.cs" />
-    <Compile Include="Core\Validation\MultipleEmailsPersonValidator.cs" />
-    <Compile Include="Core\Validation\PersonValidator.cs" />
-    <Compile Include="Core\Validation\SingleAddressPersonValidator.cs" />
-    <Compile Include="Core\Validation\SingleEmailPersonValidator.cs" />
+    <Compile Include="Core\Validation\Interface\MultipleAddressesPersonInterfaceValidator.cs" />
+    <Compile Include="Core\Validation\Interface\MultipleEmailsPersonInterfaceValidator.cs" />
+    <Compile Include="Core\Validation\Interface\SingleAddressPersonInterfaceValidator.cs" />
+    <Compile Include="Core\Validation\Interface\SingleEmailPersonInterfaceValidator.cs" />
+    <Compile Include="Core\Validation\Interface\PersonInterfaceValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property\Address\Base\AddressBase.cs" />
     <Compile Include="Property\Address\Concrete\PersonAddress.cs" />
+    <Compile Include="Property\Address\Concrete\RegularAddress.cs" />
     <Compile Include="Property\Address\Interface\IAddress.cs" />
-    <Compile Include="Property\Address\Validation\AddressValidator.cs" />
+    <Compile Include="Property\Address\Validation\Base\AddressValidator.cs" />
+    <Compile Include="Property\Address\Validation\Concrete\RegularAddressValidator.cs" />
     <Compile Include="Property\Email\Base\EmailBase.cs" />
     <Compile Include="Property\Email\Concrete\DotNetEmail.cs" />
     <Compile Include="Property\Email\Concrete\Email.cs" />
@@ -74,19 +76,26 @@
     <Compile Include="Property\Email\Interface\IEmail.cs" />
     <Compile Include="Property\Email\Interface\IPersonDotNetEmail.cs" />
     <Compile Include="Property\Email\Interface\IPersonGeneralEmail.cs" />
-    <Compile Include="Property\Email\Validation\DotNetEmailValidator.cs" />
-    <Compile Include="Property\Email\Validation\GeneralEmailValidator.cs" />
+    <Compile Include="Property\Email\Validation\Base\EmailValidator.cs" />
+    <Compile Include="Property\Email\Validation\Concrete\DotNetEmailValidator.cs" />
+    <Compile Include="Property\Email\Validation\Concrete\GeneralEmailValidator.cs" />
     <Compile Include="Property\Occupation\Base\OccupationBase.cs" />
     <Compile Include="Property\Occupation\Concrete\Occupation.cs" />
     <Compile Include="Property\Occupation\Interface\IOccupation.cs" />
+    <Compile Include="Property\Occupation\Validation\Base\OccupationValidator.cs" />
     <Compile Include="Property\PersonInfo\Base\PersonInfoBase.cs" />
     <Compile Include="Property\PersonInfo\Concrete\PersonInfo.cs" />
+    <Compile Include="Property\PersonInfo\Concrete\RegularPersonInfo.cs" />
     <Compile Include="Property\PersonInfo\Interface\IPersonInfo.cs" />
-    <Compile Include="Property\PersonInfo\Validation\PersonInfoValidator.cs" />
+    <Compile Include="Property\PersonInfo\Validation\Base\PersonInfoValidator.cs" />
+    <Compile Include="Property\PersonInfo\Validation\Concrete\RegularPersonInfoValidator.cs" />
+    <Compile Include="Property\Phone\Base\PhoneBase.cs" />
+    <Compile Include="Property\Phone\Concrete\Phone.cs" />
+    <Compile Include="Property\Phone\Interface\IPhone.cs" />
+    <Compile Include="Property\Phone\Validation\Base\PhoneValidator.cs" />
+    <Compile Include="Validation\Composite\CompositeValidator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\Interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

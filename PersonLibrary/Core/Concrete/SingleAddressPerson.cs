@@ -3,11 +3,11 @@
     using FluentValidation.Attributes;
     using PersonLibrary.Core.Base;
     using PersonLibrary.Core.Interface;
-    using PersonLibrary.Core.Validation;
+    using PersonLibrary.Core.Validation.Interface;
     using PersonLibrary.Property.Address.Interface;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    [Validator(typeof(SingleAddressPersonValidator))]
+    [Validator(typeof(SingleAddressPersonInterfaceValidator))]
     public class SingleAddressPerson : PersonBase, ISingleAddressPerson
     {
         public SingleAddressPerson(IPersonInfo personInfo, IAddress address)

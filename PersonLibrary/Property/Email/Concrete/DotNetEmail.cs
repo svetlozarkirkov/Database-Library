@@ -2,9 +2,9 @@
 {
     using PersonLibrary.Property.Email.Base;
 
-    internal class DotNetEmail : EmailBase
+    public class DotNetEmail : EmailBase
     {
-        protected DotNetEmail(string emailAddress) : base(emailAddress)
+        public DotNetEmail(string emailAddress) : base(emailAddress)
         {
         }
     }

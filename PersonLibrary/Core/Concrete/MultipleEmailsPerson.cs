@@ -5,11 +5,11 @@
     using System.Text;
     using PersonLibrary.Core.Base;
     using PersonLibrary.Core.Interface;
-    using PersonLibrary.Core.Validation;
+    using PersonLibrary.Core.Validation.Interface;
     using PersonLibrary.Property.Email.Interface;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    [Validator(typeof(MultipleEmailsPersonValidator))]
+    [Validator(typeof(MultipleEmailsPersonInterfaceValidator))]
     public class MultipleEmailsPerson : PersonBase, IMultipleEmailsPerson
     {
         public MultipleEmailsPerson(IPersonInfo personInfo) : base(personInfo)

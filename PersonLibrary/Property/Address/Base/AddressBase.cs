@@ -1,10 +1,7 @@
 ﻿namespace PersonLibrary.Property.Address.Base
 {
-    using FluentValidation.Attributes;
     using PersonLibrary.Property.Address.Interface;
-    using PersonLibrary.Property.Address.Validation;
 
-    [Validator(typeof(AddressValidator<IAddress>))]
     public abstract class AddressBase : IAddress
     {
         protected AddressBase(string country, string city, string street, string postCode)

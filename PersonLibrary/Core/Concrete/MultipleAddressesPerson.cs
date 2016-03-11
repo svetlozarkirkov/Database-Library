@@ -5,11 +5,11 @@ namespace PersonLibrary.Core.Concrete
     using System.Text;
     using PersonLibrary.Core.Base;
     using PersonLibrary.Core.Interface;
-    using PersonLibrary.Core.Validation;
+    using PersonLibrary.Core.Validation.Interface;
     using PersonLibrary.Property.Address.Interface;
     using PersonLibrary.Property.PersonInfo.Interface;
 
-    [Validator(typeof(MultipleAddressPersonValidator))]
+    [Validator(typeof(MultipleAddressesPersonInterfaceValidator))]
     public class MultipleAddressesPerson : PersonBase, IMultipleAddressesPerson
     {
         public MultipleAddressesPerson(IPersonInfo personInfo) : base(personInfo)

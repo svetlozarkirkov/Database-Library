@@ -2,9 +2,9 @@
 {
     using PersonLibrary.Property.Email.Base;
 
-    internal class GeneralEmail : EmailBase
+    public class GeneralEmail : EmailBase
     {
-        protected GeneralEmail(string emailAddress) : base(emailAddress)
+        public GeneralEmail(string emailAddress) : base(emailAddress)
         {
         }
     }
