@@ -7,4 +7,5 @@ install:
  
 script:
   - xbuild ./project-database-library.sln
+  - /p:TargetFrameworkVersion="v4.5"
   - nunit-console ./PersonLibrary.Tests/bin/Debug/PersonLibrary.Tests.dll
