@@ -3,7 +3,7 @@ solution: ./project-database-library.sln
  
 install:
   - sudo apt-get install nunit-console
-  - nuget restore ./project-database-library
+  - nuget restore ./project-database-library.sln
  
 script:
   - xbuild ./project-database-library.sln
