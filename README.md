@@ -1,7 +1,7 @@
+[![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
 <snippet>
   <content><![CDATA[
 # ${1:Project Name}
-[![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
 TODO: Write a project description
 ## Installation
 TODO: Describe the installation process
