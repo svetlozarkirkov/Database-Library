@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
+[![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)[![codecov.io](https://codecov.io/github/codecov/codecov-ruby/coverage.svg?branch=master)](https://codecov.io/github/codecov/codecov-ruby?branch=master)
