@@ -5,7 +5,7 @@ job:
   stage: build
   script:
   - echo "Restoring NuGet Packages..."
-  - D:\database\gitlab-multi-runner\nuget.exe restore "project-database-library.sln"
+  - "D:\database\gitlab-multi-runner\nuget.exe" restore "project-database-library.sln"
   - ''
   - echo "Release build..."
   - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "project-database-library.sln"
