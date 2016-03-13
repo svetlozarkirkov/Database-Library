@@ -31,4 +31,12 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = True
+		UpdateAssemblyInfoVersion = True
+		AssemblyVersionSettings = Increment.Increment.Increment.Increment
+		AssemblyFileVersionSettings = Increment.Increment.Increment.Increment
+		AssemblyInfoVersionSettings = Increment.Increment.Increment.Increment
+	EndGlobalSection
 EndGlobal
