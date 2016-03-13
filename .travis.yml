@@ -2,7 +2,7 @@ language: csharp
 solution: ./project-database-library.sln
  
 install:
-  - sudo apt-get install nunit-console.sln
+  - sudo apt-get install nunit-console
   - nuget restore ./project-database-library
  
 script:
