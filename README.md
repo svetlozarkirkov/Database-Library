@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
