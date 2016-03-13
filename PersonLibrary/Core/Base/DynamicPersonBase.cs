@@ -1,9 +1,13 @@
 ﻿namespace PersonLibrary.Core.Base
 {
+    using FluentValidation.Attributes;
+    using System;
     using System.Collections.Generic;
     using System.Text;
     using PersonLibrary.Core.Interface;
+    using PersonLibrary.Core.Validation.Interface;
 
+    [Validator(typeof(DynamicPersonInterfaceValidator))]
     public abstract class DynamicPersonBase : IDynamicPerson
     {
         protected readonly Dictionary<string, object> _properties;
@@ -15,12 +19,26 @@
 
         public void AddProperty(string key, object value)
         {
-            this._properties.Add(key, value);
+            if (!this._properties.ContainsKey(key))
+            {
+                this._properties.Add(key, value);
+            }
+            else
+            {
+                this._properties[key] = value;
+            }
         }
 
         public void RemoveProperty(string key)
         {
-            this._properties.Remove(key);
+            if (this._properties.ContainsKey(key))
+            {
+                this._properties.Remove(key);
+            }
+            else
+            {
+                throw new ArgumentException("Cannot remove property that does not exist.");
+            }
         }
 
         public override string ToString()

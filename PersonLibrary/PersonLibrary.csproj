@@ -56,6 +56,7 @@
     <Compile Include="Core\Interface\IPerson.cs" />
     <Compile Include="Core\Interface\ISingleAddressPerson.cs" />
     <Compile Include="Core\Interface\ISingleEmailPerson.cs" />
+    <Compile Include="Core\Validation\Interface\DynamicPersonInterfaceValidator.cs" />
     <Compile Include="Core\Validation\Interface\MultipleAddressesPersonInterfaceValidator.cs" />
     <Compile Include="Core\Validation\Interface\MultipleEmailsPersonInterfaceValidator.cs" />
     <Compile Include="Core\Validation\Interface\SingleAddressPersonInterfaceValidator.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Property\Phone\Concrete\Phone.cs" />
     <Compile Include="Property\Phone\Interface\IPhone.cs" />
     <Compile Include="Property\Phone\Validation\Interface\PhoneInterfaceValidator.cs" />
+    <Compile Include="Utilities\Dump\ObjectDumper.cs" />
     <Compile Include="Utilities\Validation\CompositeValidator.cs" />
   </ItemGroup>
   <ItemGroup>
