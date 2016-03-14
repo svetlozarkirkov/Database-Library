@@ -1,0 +1,6 @@
+*[Fluent Validation](https://github.com/JeremySkinner/FluentValidation)
+*[Ninject](http://www.ninject.org/)
+*[NLog](http://nlog-project.org/)
+*[Moq](https://github.com/moq/moq4)
+*[NUnit](http://www.nunit.org/)
+*[ServiceStack](https://servicestack.net/)
