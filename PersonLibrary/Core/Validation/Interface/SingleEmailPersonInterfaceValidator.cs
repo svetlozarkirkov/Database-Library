@@ -4,9 +4,9 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Email.Validation.Concrete;
 
-    public class SingleEmailPersonInterfaceValidator : AbstractValidator<ISingleEmailPerson>
+    internal class SingleEmailPersonInterfaceValidator : AbstractValidator<ISingleEmailPerson>
     {
-        public SingleEmailPersonInterfaceValidator()
+        internal SingleEmailPersonInterfaceValidator()
         {
             this.RuleFor(person => person.GetEmailAddress())
                 .SetValidator(new GeneralEmailValidator())

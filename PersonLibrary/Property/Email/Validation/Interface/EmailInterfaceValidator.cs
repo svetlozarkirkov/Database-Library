@@ -3,9 +3,9 @@
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
 
-    public class EmailInterfaceValidator : AbstractValidator<IEmail>
+    internal class EmailInterfaceValidator : AbstractValidator<IEmail>
     {
-        public EmailInterfaceValidator()
+        internal EmailInterfaceValidator()
         {
             this.RuleFor(email => email.Email())
                 .NotNull()

@@ -4,9 +4,9 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Email.Validation.Concrete;
 
-    public class MultipleEmailsPersonInterfaceValidator : AbstractValidator<IMultipleEmailsPerson>
+    internal class MultipleEmailsPersonInterfaceValidator : AbstractValidator<IMultipleEmailsPerson>
     {
-        public MultipleEmailsPersonInterfaceValidator()
+        internal MultipleEmailsPersonInterfaceValidator()
         {
             this.RuleFor(person => person.GetEmailAddresses())
                 .SetCollectionValidator(new GeneralEmailValidator())

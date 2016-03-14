@@ -1,39 +1,42 @@
 ﻿namespace PersonLibrary.Core.Base
 {
-    using FluentValidation.Attributes;
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using FluentValidation.Attributes;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Core.Validation.Interface;
+    using PersonLibrary.Property.Core.Interface;
 
     [Validator(typeof(DynamicPersonInterfaceValidator))]
     public abstract class DynamicPersonBase : IDynamicPerson
     {
-        protected readonly Dictionary<string, object> _properties;
+        protected readonly Dictionary<string, IProperty> _properties;
 
         protected DynamicPersonBase()
         {
-            this._properties = new Dictionary<string, object>();
+            this._properties = new Dictionary<string, IProperty>();
         }
 
-        public void AddProperty(string key, object value)
+        public Dictionary<string, IProperty> GetProperties() => this._properties;
+
+        public void AddProperty(string propertyName, IProperty property)
         {
-            if (!this._properties.ContainsKey(key))
+            if (!this._properties.ContainsKey(propertyName))
             {
-                this._properties.Add(key, value);
+                this._properties.Add(propertyName, property);
             }
             else
             {
-                this._properties[key] = value;
+                this._properties[propertyName] = property;
             }
         }
 
-        public void RemoveProperty(string key)
+        public void RemoveProperty(string propertyName)
         {
-            if (this._properties.ContainsKey(key))
+            if (this._properties.ContainsKey(propertyName))
             {
-                this._properties.Remove(key);
+                this._properties.Remove(propertyName);
             }
             else
             {

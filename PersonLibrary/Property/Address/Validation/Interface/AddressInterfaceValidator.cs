@@ -3,9 +3,9 @@
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
 
-    public class AddressInterfaceValidator : AbstractValidator<IAddress>
+    internal class AddressInterfaceValidator : AbstractValidator<IAddress>
     {
-        public AddressInterfaceValidator()
+        internal AddressInterfaceValidator()
         {
             this.RuleFor(personAddress => personAddress.GetCountry())
                 .NotNull()

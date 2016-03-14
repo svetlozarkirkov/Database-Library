@@ -1,6 +1,8 @@
 ﻿namespace PersonLibrary.Property.PersonInfo.Interface
 {
-    public interface IPersonInfo
+    using PersonLibrary.Property.Core.Interface;
+
+    public interface IPersonInfo : IProperty
     {
         string GetFirstName();
 

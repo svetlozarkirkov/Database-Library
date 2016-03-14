@@ -1,6 +1,8 @@
 ﻿namespace PersonLibrary.Property.Phone.Interface
 {
-    public interface IPhone
+    using PersonLibrary.Property.Core.Interface;
+
+    public interface IPhone : IProperty
     {
         string GetPhoneNumber();
     }

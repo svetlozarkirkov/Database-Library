@@ -4,9 +4,9 @@
     using PersonLibrary.Property.Address.Validation.Interface;
     using PersonLibrary.Property.Occupation.Interface;
 
-    public class OccupationInterfaceValidator : AbstractValidator<IOccupation>
+    internal class OccupationInterfaceValidator : AbstractValidator<IOccupation>
     {
-        public OccupationInterfaceValidator()
+        internal OccupationInterfaceValidator()
         {
             this.RuleFor(occ => occ.GetCompanyName())
                 .NotNull()

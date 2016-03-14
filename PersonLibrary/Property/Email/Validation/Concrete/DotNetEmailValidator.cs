@@ -6,7 +6,7 @@
     using PersonLibrary.Utilities.Validation;
 
 
-    public class DotNetEmailValidator : CompositeValidator<IDotNetEmail>
+    internal class DotNetEmailValidator : CompositeValidator<IDotNetEmail>
     {
         /// <summary>
         /// Dot Net Email Regex
@@ -14,7 +14,7 @@
         private const string DotNetEmailRegex =
             "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
-        public DotNetEmailValidator()
+        internal DotNetEmailValidator()
         {
             this.RegisterBaseValidator(new EmailInterfaceValidator());
             this.RuleFor(email => email.Email())

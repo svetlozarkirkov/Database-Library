@@ -6,7 +6,7 @@
     using FluentValidation;
     using FluentValidation.Results;
 
-    public abstract class CompositeValidator<T> : AbstractValidator<T>
+    internal abstract class CompositeValidator<T> : AbstractValidator<T>
     {
         private readonly List<IValidator> _additionalValidators = new List<IValidator>();
 

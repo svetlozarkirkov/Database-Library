@@ -1,6 +1,8 @@
 ﻿namespace PersonLibrary.Property.Address.Interface
 {
-    public interface IAddress
+    using PersonLibrary.Property.Core.Interface;
+
+    public interface IAddress : IProperty
     {
         string GetCountry();
 

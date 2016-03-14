@@ -34,6 +34,10 @@
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -67,6 +71,7 @@
     <Compile Include="Property\Address\Concrete\Address.cs" />
     <Compile Include="Property\Address\Interface\IAddress.cs" />
     <Compile Include="Property\Address\Validation\Interface\AddressInterfaceValidator.cs" />
+    <Compile Include="Property\Core\Interface\IProperty.cs" />
     <Compile Include="Property\Email\Base\EmailBase.cs" />
     <Compile Include="Property\Email\Concrete\DotNetEmail.cs" />
     <Compile Include="Property\Email\Concrete\Email.cs" />
@@ -91,7 +96,6 @@
     <Compile Include="Property\Phone\Validation\Interface\PhoneInterfaceValidator.cs" />
     <Compile Include="Utilities\Dump\ObjectDumper.cs" />
     <Compile Include="Utilities\Validation\CompositeValidator.cs" />
-    <Compile Include="Utilities\Validation\ValidationFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Property\Address\Validation\Concrete\" />

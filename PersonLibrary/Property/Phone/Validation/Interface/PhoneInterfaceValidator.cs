@@ -3,9 +3,9 @@
     using FluentValidation;
     using PersonLibrary.Property.Phone.Interface;
 
-    public class PhoneInterfaceValidator : AbstractValidator<IPhone>
+    internal class PhoneInterfaceValidator : AbstractValidator<IPhone>
     {
-        public PhoneInterfaceValidator()
+        internal PhoneInterfaceValidator()
         {
             this.RuleFor(phone => phone.GetPhoneNumber())
                 .NotNull()

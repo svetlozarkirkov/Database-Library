@@ -4,9 +4,9 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Address.Validation.Interface;
 
-    public class MultipleAddressesPersonInterfaceValidator : AbstractValidator<IMultipleAddressesPerson>
+    internal class MultipleAddressesPersonInterfaceValidator : AbstractValidator<IMultipleAddressesPerson>
     {
-        public MultipleAddressesPersonInterfaceValidator()
+        internal MultipleAddressesPersonInterfaceValidator()
         {
             this.RuleFor(person => person.GetAddresses())
                 .SetCollectionValidator(new AddressInterfaceValidator())

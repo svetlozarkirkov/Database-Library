@@ -4,13 +4,12 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.PersonInfo.Validation.Interface;
 
-    public class PersonInterfaceValidator : AbstractValidator<IPerson>
+    internal class PersonInterfaceValidator : AbstractValidator<IPerson>
     {
-        public PersonInterfaceValidator()
+        internal PersonInterfaceValidator()
         {
-            RuleFor(person => person.GetPersonInfo())
-                .SetValidator(new PersonInfoInterfaceValidator())
-                .WithName("Person info");
+            this.RuleFor(person => person.GetPersonInfo())
+                .SetValidator(new PersonInfoInterfaceValidator());
         }
     }
 }

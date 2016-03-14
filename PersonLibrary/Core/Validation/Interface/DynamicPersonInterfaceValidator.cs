@@ -3,10 +3,13 @@
     using FluentValidation;
     using PersonLibrary.Core.Interface;
 
-    public class DynamicPersonInterfaceValidator : AbstractValidator<IDynamicPerson>
+    internal class DynamicPersonInterfaceValidator : AbstractValidator<IDynamicPerson>
     {
-        public DynamicPersonInterfaceValidator()
+        internal DynamicPersonInterfaceValidator()
         {
+            // TODO: iterate each property and validate it using its appropriate validator
+            this.RuleFor(person => person.GetProperties())
+                .SetCollectionValidator(null);
         }
     }
 }
