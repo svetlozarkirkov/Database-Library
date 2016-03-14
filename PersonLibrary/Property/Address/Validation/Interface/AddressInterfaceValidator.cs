@@ -2,9 +2,8 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class AddressInterfaceValidator : ValidatorSingletonBase<IAddress>
+    public class AddressInterfaceValidator : AbstractValidator<IAddress>
     {
         public AddressInterfaceValidator()
         {

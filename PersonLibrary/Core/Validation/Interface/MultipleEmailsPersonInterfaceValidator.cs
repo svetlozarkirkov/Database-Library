@@ -3,16 +3,14 @@
     using FluentValidation;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Email.Validation.Concrete;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class MultipleEmailsPersonInterfaceValidator
-        : ValidatorSingletonBase<IMultipleEmailsPerson>
+    public class MultipleEmailsPersonInterfaceValidator : AbstractValidator<IMultipleEmailsPerson>
     {
         public MultipleEmailsPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.GetEmailAddresses())
-                .SetCollectionValidator(GeneralEmailValidator.GetInstance())
-                .WithName("E-mail addresses");
+            this.RuleFor(p => p.GetEmailAddresses())
+                .NotNull()
+                .SetCollectionValidator(new GeneralEmailValidator());
         }
     }
 }

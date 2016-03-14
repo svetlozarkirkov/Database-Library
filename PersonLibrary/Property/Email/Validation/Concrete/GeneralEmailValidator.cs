@@ -1,10 +1,11 @@
-﻿namespace PersonLibrary.Property.Email.Validation.Concrete
+﻿using System;
+
+namespace PersonLibrary.Property.Email.Validation.Concrete
 {
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class GeneralEmailValidator : ValidatorSingletonBase<IGeneralEmail>
+    public class GeneralEmailValidator : AbstractValidator<IGeneralEmail>
     {
         /// <summary>
         /// General Email Regex (RFC 5322 Official Standard)

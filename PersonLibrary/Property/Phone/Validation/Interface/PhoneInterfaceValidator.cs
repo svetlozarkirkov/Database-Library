@@ -2,9 +2,8 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Phone.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class PhoneInterfaceValidator : ValidatorSingletonBase<IPhone>
+    public class PhoneInterfaceValidator : AbstractValidator<IPhone>
     {
         public PhoneInterfaceValidator()
         {

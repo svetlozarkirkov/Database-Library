@@ -2,9 +2,8 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class EmailInterfaceValidator : ValidatorSingletonBase<IEmail>
+    public class EmailInterfaceValidator : AbstractValidator<IEmail>
     {
         public EmailInterfaceValidator()
         {

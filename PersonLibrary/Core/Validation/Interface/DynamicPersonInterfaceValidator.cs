@@ -1,9 +1,9 @@
 ﻿namespace PersonLibrary.Core.Validation.Interface
 {
+    using FluentValidation;
     using PersonLibrary.Core.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class DynamicPersonInterfaceValidator : ValidatorSingletonBase<IDynamicPerson>
+    public class DynamicPersonInterfaceValidator : AbstractValidator<IDynamicPerson>
     {
         public DynamicPersonInterfaceValidator()
         {

@@ -9,11 +9,12 @@
     public abstract class OccupationBase : IOccupation
     {
         private readonly string _companyName;
-        private IAddress _companyAddress;
+        private readonly IAddress _companyAddress;
 
-        protected OccupationBase(string companyName)
+        protected OccupationBase(string companyName, IAddress companyAddress)
         {
             this._companyName = companyName;
+            this._companyAddress = companyAddress;
         }
 
         public string GetCompanyName() => this._companyName;

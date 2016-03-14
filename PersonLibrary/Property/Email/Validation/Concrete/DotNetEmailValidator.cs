@@ -2,9 +2,8 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class DotNetEmailValidator : ValidatorSingletonBase<IDotNetEmail>
+    public class DotNetEmailValidator : AbstractValidator<IDotNetEmail>
     {
         /// <summary>
         /// Dot Net Email Regex

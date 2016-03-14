@@ -3,15 +3,15 @@
     using FluentValidation;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Address.Validation.Interface;
-    using PersonLibrary.Utilities.Validation;
 
-    internal class MultipleAddressesPersonInterfaceValidator
-        : ValidatorSingletonBase<IMultipleAddressesPerson>
+    public class MultipleAddressesPersonInterfaceValidator
+        : AbstractValidator<IMultipleAddressesPerson>
     {
         public MultipleAddressesPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.GetAddresses())
-                .SetCollectionValidator(AddressInterfaceValidator.GetInstance())
+            this.RuleFor(p => p.GetAddresses())
+                .NotNull()
+                .SetCollectionValidator(new AddressInterfaceValidator())
                 .WithName("Addresses");
         }
     }
