@@ -4,6 +4,6 @@
 
     public interface ISingleAddressPerson : IPerson
     {
-        IAddress GetAddress();
+        IAddress Address { get; }
     }
 }

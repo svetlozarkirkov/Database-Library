@@ -18,7 +18,7 @@
             this._emailAddress = email;
         }
 
-        public IGeneralEmail GetEmailAddress() => this._emailAddress;
+        public IGeneralEmail EmailAddress => this._emailAddress;
 
         public override string ToString() => base.ToString() + "\nEmail: " + this._emailAddress;
     }

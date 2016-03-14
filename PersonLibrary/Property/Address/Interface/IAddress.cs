@@ -4,12 +4,12 @@
 
     public interface IAddress : IProperty
     {
-        string GetCountry();
+        string Country { get; }
 
-        string GetCity();
+        string City { get; }
 
-        string GetStreet();
+        string Street { get; }
 
-        string GetPostCode();
+        string PostCode { get; }
     }
 }

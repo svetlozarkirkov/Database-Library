@@ -17,8 +17,8 @@
             this._companyAddress = companyAddress;
         }
 
-        public string GetCompanyName() => this._companyName;
+        public string CompanyName => this._companyName;
 
-        public IAddress GetCompanyAddress() => this._companyAddress;
+        public IAddress CompanyAddress => this._companyAddress;
     }
 }

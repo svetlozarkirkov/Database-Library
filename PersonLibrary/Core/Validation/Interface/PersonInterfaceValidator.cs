@@ -8,7 +8,8 @@
     {
         public PersonInterfaceValidator()
         {
-            this.RuleFor(p => p.GetPersonInfo())
+            this.RuleFor(p => p.PersonInfo)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .SetValidator(new PersonInfoInterfaceValidator())
                 .WithName("Person info");

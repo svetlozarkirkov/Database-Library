@@ -7,7 +7,8 @@
     {
         public EmailInterfaceValidator()
         {
-            this.RuleFor(email => email.Email())
+            this.RuleFor(email => email.Email)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("E-mail");

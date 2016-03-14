@@ -5,7 +5,7 @@
 
     public interface IMultipleAddressesPerson : IPerson
     {
-        List<IAddress> GetAddresses();
+        List<IAddress> Addresses { get; }
 
         void AddAddress(IAddress address);
 

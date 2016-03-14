@@ -5,8 +5,8 @@
 
     public interface IOccupation : IProperty
     {
-        string GetCompanyName();
+        string CompanyName { get; }
 
-        IAddress GetCompanyAddress();
+        IAddress CompanyAddress { get; }
     }
 }

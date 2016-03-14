@@ -5,7 +5,7 @@
 
     public interface IMultipleEmailsPerson : IPerson
     {
-        List<IGeneralEmail> GetEmailAddresses();
+        List<IGeneralEmail> EmailAddresses { get; }
 
         void AddEmailAddress(IGeneralEmail email);
 

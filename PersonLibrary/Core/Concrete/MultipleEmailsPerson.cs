@@ -34,7 +34,7 @@
             this._emailAddresses.AddRange(emails);
         }
 
-        public List<IGeneralEmail> GetEmailAddresses() => this._emailAddresses.ToList();
+        public List<IGeneralEmail> EmailAddresses => this._emailAddresses.ToList();
 
         public void AddEmailAddress(IGeneralEmail email)
         {

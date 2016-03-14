@@ -4,6 +4,6 @@
 
     public interface IEmail : IProperty
     {
-        string Email();
+        string Email { get; }
     }
 }

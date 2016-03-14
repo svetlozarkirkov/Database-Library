@@ -14,6 +14,6 @@
             this._phoneNumber = phoneNumber;
         }
 
-        public string GetPhoneNumber() => this._phoneNumber;
+        public string PhoneNumber => this._phoneNumber;
     }
 }

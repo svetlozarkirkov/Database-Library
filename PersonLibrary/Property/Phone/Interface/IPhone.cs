@@ -4,6 +4,6 @@
 
     public interface IPhone : IProperty
     {
-        string GetPhoneNumber();
+        string PhoneNumber { get; }
     }
 }

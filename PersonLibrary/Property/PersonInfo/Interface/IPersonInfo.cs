@@ -4,12 +4,12 @@
 
     public interface IPersonInfo : IProperty
     {
-        string GetFirstName();
+        string FirstName { get; }
 
-        string GetSurName();
+        string MiddleName { get; }
 
-        string GetLastName();
+        string LastName { get; }
 
-        string GetEgn();
+        string Egn { get; }
     }
 }

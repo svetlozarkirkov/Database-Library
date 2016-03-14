@@ -14,8 +14,7 @@
         {
             this._personInfo = personInfo;
         }
-
-        public IPersonInfo GetPersonInfo() => this._personInfo;
+        public IPersonInfo PersonInfo => this._personInfo;
 
         public override string ToString() => this._personInfo.ToString();
     }

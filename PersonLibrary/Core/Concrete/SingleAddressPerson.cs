@@ -18,7 +18,7 @@
             this._address = address;
         }
 
-        public IAddress GetAddress() => this._address;
+        public IAddress Address => this._address;
 
         public override string ToString() => base.ToString() + "\nAddress: " + this._address;
     }

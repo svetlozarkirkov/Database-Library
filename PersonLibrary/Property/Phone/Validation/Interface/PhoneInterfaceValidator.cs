@@ -7,7 +7,9 @@
     {
         public PhoneInterfaceValidator()
         {
-            this.RuleFor(phone => phone.GetPhoneNumber())
+            // TODO: further checks
+            this.RuleFor(phone => phone.PhoneNumber)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty();
         }

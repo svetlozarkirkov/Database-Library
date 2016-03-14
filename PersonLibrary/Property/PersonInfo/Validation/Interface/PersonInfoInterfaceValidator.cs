@@ -1,4 +1,6 @@
-﻿namespace PersonLibrary.Property.PersonInfo.Validation.Interface
+﻿using FluentValidation.Validators;
+
+namespace PersonLibrary.Property.PersonInfo.Validation.Interface
 {
     using FluentValidation;
     using PersonLibrary.Property.PersonInfo.Interface;
@@ -7,25 +9,29 @@
     {
         public PersonInfoInterfaceValidator()
         {
-            this.RuleFor(personInfo => personInfo.GetFirstName())
+            this.RuleFor(personInfo => personInfo.FirstName)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20)
                 .WithName("First name");
 
-            this.RuleFor(personInfo => personInfo.GetSurName())
+            this.RuleFor(personInfo => personInfo.MiddleName)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20)
-                .WithName("Surname");
+                .WithName("Middle name");
 
-            this.RuleFor(personInfo => personInfo.GetLastName())
+            this.RuleFor(personInfo => personInfo.LastName)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .Length(1, 20)
                 .WithName("Last name");
 
-            this.RuleFor(personInfo => personInfo.GetEgn())
+            this.RuleFor(personInfo => personInfo.Egn)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .Length(10)

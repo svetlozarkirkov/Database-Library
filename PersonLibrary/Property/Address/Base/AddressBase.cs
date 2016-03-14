@@ -20,13 +20,10 @@
             this._postcode = postCode;
         }
 
-        public string GetCountry() => this._country;
-
-        public string GetCity() => this._city;
-
-        public string GetStreet() => this._street;
-
-        public string GetPostCode() => this._postcode;
+        public string Country => this._country;
+        public string City => this._city;
+        public string Street => this._street;
+        public string PostCode => this._postcode;
 
         public override string ToString() => $"{{ [ Country: {this._country} ] [ City: {this._city} ] [ Street: {this._street} ] [ PostCode: {this._postcode} ] }}";
     }

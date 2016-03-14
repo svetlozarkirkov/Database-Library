@@ -8,12 +8,14 @@
     {
         public OccupationInterfaceValidator()
         {
-            this.RuleFor(occ => occ.GetCompanyName())
+            this.RuleFor(occ => occ.CompanyName)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("Company name");
 
-            this.RuleFor(occ => occ.GetCompanyAddress())
+            this.RuleFor(occ => occ.CompanyAddress)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .SetValidator(new AddressInterfaceValidator())
                 .WithName("Company address");

@@ -4,7 +4,6 @@
     using FluentValidation.Attributes;
     using PersonLibrary.Core.Concrete;
     using PersonLibrary.Property.Address.Concrete;
-    using PersonLibrary.Property.Email.Concrete;
     using PersonLibrary.Property.Occupation.Concrete;
     using PersonLibrary.Property.PersonInfo.Concrete;
 
@@ -19,10 +18,13 @@
             var person =
                 new MultipleAddressesPerson(personInfo, address);
 
-            var validator = new AttributedValidatorFactory().GetValidator(person.GetType());
+            var attrFactory = new AttributedValidatorFactory();
+
+            var validator = attrFactory.GetValidator(occupation.GetType());
             Console.WriteLine(validator.GetType().FullName);
-            var results = validator.Validate(person);
-            foreach (var error in results.Errors)
+            var results = validator.Validate(occupation);
+            var errors = results.Errors;
+            foreach (var error in errors)
             {
                 Console.WriteLine(error);
             }

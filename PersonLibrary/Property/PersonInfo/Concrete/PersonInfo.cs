@@ -7,8 +7,8 @@
     [Validator(typeof(PersonInfoInterfaceValidator))]
     public class PersonInfo : PersonInfoBase
     {
-        public PersonInfo(string firstName, string surName, string lastName, string egn)
-            : base(firstName, surName, lastName, egn)
+        public PersonInfo(string firstName, string middleName, string lastName, string egn)
+            : base(firstName, middleName, lastName, egn)
         {
         }
     }

@@ -7,22 +7,26 @@
     {
         public AddressInterfaceValidator()
         {
-            this.RuleFor(personAddress => personAddress.GetCountry())
+            this.RuleFor(personAddress => personAddress.Country)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("Country");
 
-            this.RuleFor(personAddress => personAddress.GetCity())
+            this.RuleFor(personAddress => personAddress.City)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("City");
 
-            this.RuleFor(personAddress => personAddress.GetStreet())
+            this.RuleFor(personAddress => personAddress.Street)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("Street");
 
-            this.RuleFor(personAddress => personAddress.GetPostCode())
+            this.RuleFor(personAddress => personAddress.PostCode)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
                 .WithName("Post code");

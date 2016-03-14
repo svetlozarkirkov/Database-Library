@@ -14,7 +14,7 @@
             this._email = emailAddress;
         }
 
-        public string Email() => this._email;
+        public string Email => this._email;
 
         public override string ToString() => $"Email: [ {this._email} ]";
     }

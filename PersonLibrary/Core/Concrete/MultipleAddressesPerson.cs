@@ -33,7 +33,7 @@ namespace PersonLibrary.Core.Concrete
             this._addresses.AddRange(addresses);
         }
 
-        public List<IAddress> GetAddresses() => this._addresses.ToList();
+        public List<IAddress> Addresses => this._addresses.ToList();
 
         public void AddAddress(IAddress address)
         {

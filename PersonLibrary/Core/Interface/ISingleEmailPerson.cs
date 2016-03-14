@@ -4,6 +4,6 @@
 
     public interface ISingleEmailPerson : IPerson
     {
-        IGeneralEmail GetEmailAddress();
+        IGeneralEmail EmailAddress { get; }
     }
 }
