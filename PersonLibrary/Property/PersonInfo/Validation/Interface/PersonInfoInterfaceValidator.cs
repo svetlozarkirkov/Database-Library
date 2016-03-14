@@ -2,10 +2,11 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.PersonInfo.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    internal class PersonInfoInterfaceValidator : AbstractValidator<IPersonInfo>
+    internal class PersonInfoInterfaceValidator : ValidatorSingletonBase<IPersonInfo>
     {
-        internal PersonInfoInterfaceValidator()
+        public PersonInfoInterfaceValidator()
         {
             this.RuleFor(personInfo => personInfo.GetFirstName())
                 .NotNull()

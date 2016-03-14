@@ -3,10 +3,11 @@
     using FluentValidation;
     using PersonLibrary.Property.Address.Validation.Interface;
     using PersonLibrary.Property.Occupation.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    internal class OccupationInterfaceValidator : AbstractValidator<IOccupation>
+    internal class OccupationInterfaceValidator : ValidatorSingletonBase<IOccupation>
     {
-        internal OccupationInterfaceValidator()
+        public OccupationInterfaceValidator()
         {
             this.RuleFor(occ => occ.GetCompanyName())
                 .NotNull()
@@ -14,7 +15,7 @@
                 .WithName("Company name");
 
             this.RuleFor(occ => occ.GetCompanyAddress())
-                .SetValidator(new AddressInterfaceValidator())
+                .SetValidator(AddressInterfaceValidator.GetInstance())
                 .WithName("Company address");
         }
     }

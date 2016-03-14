@@ -2,11 +2,9 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
-    using PersonLibrary.Property.Email.Validation.Interface;
     using PersonLibrary.Utilities.Validation;
 
-
-    internal class DotNetEmailValidator : CompositeValidator<IDotNetEmail>
+    internal class DotNetEmailValidator : ValidatorSingletonBase<IDotNetEmail>
     {
         /// <summary>
         /// Dot Net Email Regex
@@ -14,9 +12,8 @@
         private const string DotNetEmailRegex =
             "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
-        internal DotNetEmailValidator()
+        public DotNetEmailValidator()
         {
-            this.RegisterBaseValidator(new EmailInterfaceValidator());
             this.RuleFor(email => email.Email())
                 .Matches(DotNetEmailRegex)
                 .WithName("E-mail");

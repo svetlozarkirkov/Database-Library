@@ -2,10 +2,9 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
-    using PersonLibrary.Property.Email.Validation.Interface;
     using PersonLibrary.Utilities.Validation;
 
-    internal class GeneralEmailValidator : CompositeValidator<IGeneralEmail>
+    internal class GeneralEmailValidator : ValidatorSingletonBase<IGeneralEmail>
     {
         /// <summary>
         /// General Email Regex (RFC 5322 Official Standard)
@@ -19,10 +18,11 @@
             ":(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[" +
             "\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
 
-        internal GeneralEmailValidator()
+        public GeneralEmailValidator()
         {
-            this.RegisterBaseValidator(new EmailInterfaceValidator());
             this.RuleFor(email => email.Email())
+                .NotNull()
+                .NotEmpty()
                 .Matches(GeneralEmailRegex)
                 .WithName("E-mail");
         }

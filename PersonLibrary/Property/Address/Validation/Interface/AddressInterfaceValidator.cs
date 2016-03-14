@@ -2,10 +2,11 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    internal class AddressInterfaceValidator : AbstractValidator<IAddress>
+    internal class AddressInterfaceValidator : ValidatorSingletonBase<IAddress>
     {
-        internal AddressInterfaceValidator()
+        public AddressInterfaceValidator()
         {
             this.RuleFor(personAddress => personAddress.GetCountry())
                 .NotNull()

@@ -2,15 +2,15 @@
 {
     using FluentValidation;
     using PersonLibrary.Property.Phone.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    internal class PhoneInterfaceValidator : AbstractValidator<IPhone>
+    internal class PhoneInterfaceValidator : ValidatorSingletonBase<IPhone>
     {
-        internal PhoneInterfaceValidator()
+        public PhoneInterfaceValidator()
         {
             this.RuleFor(phone => phone.GetPhoneNumber())
                 .NotNull()
-                .NotEmpty()
-                .WithName("Phone");
+                .NotEmpty();
         }
     }
 }

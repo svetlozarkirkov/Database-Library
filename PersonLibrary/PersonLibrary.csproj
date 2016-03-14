@@ -96,6 +96,8 @@
     <Compile Include="Property\Phone\Validation\Interface\PhoneInterfaceValidator.cs" />
     <Compile Include="Utilities\Dump\ObjectDumper.cs" />
     <Compile Include="Utilities\Validation\CompositeValidator.cs" />
+    <Compile Include="Utilities\Validation\NinjectValidationFactory.cs" />
+    <Compile Include="Utilities\Validation\ValidatorSingletonBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Property\Address\Validation\Concrete\" />

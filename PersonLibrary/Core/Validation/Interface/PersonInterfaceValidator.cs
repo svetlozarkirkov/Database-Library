@@ -3,13 +3,16 @@
     using FluentValidation;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.PersonInfo.Validation.Interface;
+    using PersonLibrary.Utilities.Validation;
 
-    internal class PersonInterfaceValidator : AbstractValidator<IPerson>
+    internal class PersonInterfaceValidator : ValidatorSingletonBase<IPerson>
     {
-        internal PersonInterfaceValidator()
+        public PersonInterfaceValidator()
         {
             this.RuleFor(person => person.GetPersonInfo())
-                .SetValidator(new PersonInfoInterfaceValidator());
+                .NotNull()
+                .SetValidator(PersonInfoInterfaceValidator.GetInstance())
+                .WithName("Person info");
         }
     }
 }
