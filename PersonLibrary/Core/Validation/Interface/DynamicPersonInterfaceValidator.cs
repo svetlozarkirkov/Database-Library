@@ -8,8 +8,6 @@
         internal DynamicPersonInterfaceValidator()
         {
             // TODO: iterate each property and validate it using its appropriate validator
-            this.RuleFor(person => person.GetProperties())
-                .SetCollectionValidator(null);
         }
     }
 }
