@@ -8,8 +8,9 @@
     {
         public SingleAddressPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.Address)
-                .SetValidator(new AddressInterfaceValidator());
+            this.RuleFor(person => person.GetAddress())
+                .SetValidator(new AddressInterfaceValidator())
+                .WithName("Address");
         }
     }
 }

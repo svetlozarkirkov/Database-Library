@@ -22,7 +22,9 @@
         public GeneralEmailValidator()
         {
             this.RegisterBaseValidator(new EmailInterfaceValidator());
-            this.RuleFor(email => email.EmailAddress).Matches(GeneralEmailRegex);
+            this.RuleFor(email => email.Email())
+                .Matches(GeneralEmailRegex)
+                .WithName("E-mail");
         }
     }
 }

@@ -10,14 +10,16 @@
     [Validator(typeof(SingleAddressPersonInterfaceValidator))]
     public class SingleAddressPerson : PersonBase, ISingleAddressPerson
     {
+        private readonly IAddress _address;
+
         public SingleAddressPerson(IPersonInfo personInfo, IAddress address)
             : base(personInfo)
         {
-            this.Address = address;
+            this._address = address;
         }
 
-        public IAddress Address { get; set; }
+        public IAddress GetAddress() => this._address;
 
-        public override string ToString() => base.ToString() + "\nAddress: " + this.Address;
+        public override string ToString() => base.ToString() + "\nAddress: " + this._address;
     }
 }

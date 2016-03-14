@@ -1,42 +1,42 @@
-Software Name as Headline
+Database Library
 ======
-**Software Name** is a software for things. Short description here.
+**Database library** for personal use.
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
 
 ## Download
-* [Version X.Y](https://github.com/username/sw-name/archive/master.zip)
+* [Version 0.2](https://github.com/svetlozarkirkov/Database-Library/archive/master.zip)
 * Other Versions
 
 ## Usage
-```$ git clone https://github.com/username/software-project.git
+```$ git clone https://github.com/svetlozarkirkov/Database-Library.git
 ...```
 
 ## Contributors
 
 ### Contributors on GitHub
-* [Contributors](https://github.com/username/sw-name/graphs/contributors)
+* [Contributors](https://github.com/svetlozarkirkov/Database-Library/graphs/contributors)
 
 ### Translations
-* [Transifex](https://www.transifex.com/projects/p/sw-name/)
+* [Transifex](https://www.transifex.com/projects/p/Database-Library/)
 
 ### Third party libraries
-* see [LIBRARIES](https://github.com/username/sw-name/blob/master/LIBRARIES.md) files
+* see [LIBRARIES](https://github.com/svetlozarkirkov/Database-Library/blob/master/LIBRARIES.md) files
 
 ## License 
-* see [LICENSE](https://github.com/username/sw-name/blob/master/LICENSE.md) file
+* see [LICENSE](https://github.com/svetlozarkirkov/Database-Library/blob/master/LICENSE.md) file
 
 ## Version 
-* Version X.Y
+* Version 0.2
 
 ## How-to use this code
-* see [INSTRUCTIONS](https://github.com/username/sw-name/blob/master/INSTRUCTIONS.md) file
+* see [INSTRUCTIONS](https://github.com/svetlozarkirkov/Database-Library/blob/master/INSTRUCTIONS.md) file
 
 ## Contact
 #### Developer/Company
-* Homepage: 
-* e-mail: 
-* Twitter: [@twitterhandle](https://twitter.com/twitterhandle "twitterhandle on twitter")
+* Homepage: http://svetlozarkirkov.xyz
+* e-mail: svetlozark@gmail.com
+* Twitter: [@twitterhandle](https://twitter.com/svetlozarkirkov "svetlozarkirkov on twitter")
 * other communication/social media
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/sw-name&title=sw-name&language=&tags=github&category=software)
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=svetlozarkirkov&url=https://github.com/svetlozarkirkov/Database-Library&title=Database-Library&language=&tags=github&category=software)

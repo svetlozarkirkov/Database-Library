@@ -2,6 +2,6 @@
 {
     public interface IEmail
     {
-        string EmailAddress { get; set; }
+        string Email();
     }
 }

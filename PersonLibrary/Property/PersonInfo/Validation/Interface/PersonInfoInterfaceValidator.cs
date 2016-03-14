@@ -7,25 +7,29 @@
     {
         public PersonInfoInterfaceValidator()
         {
-            this.RuleFor(personInfo => personInfo.FirstName)
+            this.RuleFor(personInfo => personInfo.GetFirstName())
                 .NotNull()
                 .NotEmpty()
-                .Length(1, 20);
+                .Length(1, 20)
+                .WithName("First name");
 
-            this.RuleFor(personInfo => personInfo.SurName)
+            this.RuleFor(personInfo => personInfo.GetSurName())
                 .NotNull()
                 .NotEmpty()
-                .Length(1, 20);
+                .Length(1, 20)
+                .WithName("Surname");
 
-            this.RuleFor(personInfo => personInfo.LastName)
+            this.RuleFor(personInfo => personInfo.GetLastName())
                 .NotNull()
                 .NotEmpty()
-                .Length(1, 20);
+                .Length(1, 20)
+                .WithName("Last name");
 
-            this.RuleFor(personInfo => personInfo.Egn)
+            this.RuleFor(personInfo => personInfo.GetEgn())
                 .NotNull()
                 .NotEmpty()
-                .Length(10);
+                .Length(10)
+                .WithName("EGN");
         }
     }
 }

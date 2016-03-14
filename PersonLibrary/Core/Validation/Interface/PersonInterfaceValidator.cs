@@ -8,8 +8,9 @@
     {
         public PersonInterfaceValidator()
         {
-            RuleFor(personBase => personBase.PersonInfo)
-                .SetValidator(new PersonInfoInterfaceValidator());
+            RuleFor(person => person.GetPersonInfo())
+                .SetValidator(new PersonInfoInterfaceValidator())
+                .WithName("Person info");
         }
     }
 }

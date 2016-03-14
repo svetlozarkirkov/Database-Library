@@ -2,12 +2,12 @@
 {
     public interface IPersonInfo
     {
-        string FirstName { get; set; }
+        string GetFirstName();
 
-        string SurName { get; set; }
+        string GetSurName();
 
-        string LastName { get; set; }
+        string GetLastName();
 
-        string Egn { get; set; }
+        string GetEgn();
     }
 }

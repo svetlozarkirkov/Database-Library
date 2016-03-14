@@ -17,7 +17,9 @@
         public DotNetEmailValidator()
         {
             this.RegisterBaseValidator(new EmailInterfaceValidator());
-            this.RuleFor(email => email.EmailAddress).Matches(DotNetEmailRegex);
+            this.RuleFor(email => email.Email())
+                .Matches(DotNetEmailRegex)
+                .WithName("E-mail");
         }
     }
 }

@@ -7,22 +7,28 @@
     [Validator(typeof(PersonInfoInterfaceValidator))]
     public abstract class PersonInfoBase : IPersonInfo
     {
+        private readonly string _firstName;
+        private readonly string _surName;
+        private readonly string _lastName;
+        private readonly string _egn;
+
         protected PersonInfoBase(string firstName, string surName, string lastName, string egn)
         {
-            this.FirstName = firstName;
-            this.SurName = surName;
-            this.LastName = lastName;
-            this.Egn = egn;
+            this._firstName = firstName;
+            this._surName = surName;
+            this._lastName = lastName;
+            this._egn = egn;
         }
-        public string FirstName { get; set; }
 
-        public string SurName { get; set; }
+        public override string ToString() => $"Personal Info: {{ [ First name: {this._firstName} ] [ Surname: {this._surName} ] " +
+            $"[ Last name: {this._lastName} ] [ EGN: {this._egn} ] }}";
 
-        public string LastName { get; set; }
+        public string GetFirstName() => this._firstName;
 
-        public string Egn { get; set; }
+        public string GetSurName() => this._surName;
 
-        public override string ToString() => $"Personal Info: {{ [ First name: {this.FirstName} ] [ Surname: {this.SurName} ] " +
-            $"[ Last name: {this.LastName} ] [ EGN: {this.Egn} ] }}";
+        public string GetLastName() => this._lastName;
+
+        public string GetEgn() => this._egn;
     }
 }

@@ -2,12 +2,12 @@
 {
     public interface IAddress
     {
-        string Country { get; set; }
+        string GetCountry();
 
-        string City { get; set; }
+        string GetCity();
 
-        string Street { get; set; }
+        string GetStreet();
 
-        string PostCode { get; set; }
+        string GetPostCode();
     }
 }

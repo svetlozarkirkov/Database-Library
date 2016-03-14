@@ -1,8 +1,10 @@
 namespace PersonLibrary.Core.Concrete
 {
-    using FluentValidation.Attributes;
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
+    using FluentValidation.Attributes;
     using PersonLibrary.Core.Base;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Core.Validation.Interface;
@@ -12,35 +14,51 @@ namespace PersonLibrary.Core.Concrete
     [Validator(typeof(MultipleAddressesPersonInterfaceValidator))]
     public class MultipleAddressesPerson : PersonBase, IMultipleAddressesPerson
     {
+        private readonly List<IAddress> _addresses;
+
         public MultipleAddressesPerson(IPersonInfo personInfo) : base(personInfo)
         {
-            this.Addresses = new List<IAddress>();
+            this._addresses = new List<IAddress>();
         }
 
         public MultipleAddressesPerson(IPersonInfo personInfo, IAddress address) : base(personInfo)
         {
-            this.Addresses = new List<IAddress> { address };
+            this._addresses = new List<IAddress> { address };
         }
 
         public MultipleAddressesPerson
             (IPersonInfo personInfo, IEnumerable<IAddress> addresses) : base(personInfo)
         {
-            this.Addresses = new List<IAddress>();
-            ((List<IAddress>)this.Addresses).AddRange(addresses);
+            this._addresses = new List<IAddress>();
+            this._addresses.AddRange(addresses);
         }
 
-        public IEnumerable<IAddress> Addresses { get; }
+        public List<IAddress> GetAddresses() => this._addresses.ToList();
 
         public void AddAddress(IAddress address)
         {
-            ((List<IAddress>)this.Addresses).Add(address);
+            this._addresses.Add(address);
+        }
+
+        public void RemoveAddress(int index)
+        {
+            if (index >= 0 && index < this._addresses.Count)
+            {
+                this._addresses.RemoveAt(index);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(index),
+                    "Cannot remove address - invalid index given.");
+            }
         }
 
         public override string ToString()
         {
             var result = new StringBuilder();
             result.Append("\nAddresses: { ");
-            foreach (var address in Addresses)
+            foreach (var address in _addresses)
             {
                 result.Append(address);
             }

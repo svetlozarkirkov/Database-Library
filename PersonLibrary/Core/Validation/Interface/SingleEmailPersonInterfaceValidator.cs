@@ -8,8 +8,9 @@
     {
         public SingleEmailPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.Email)
-                .SetValidator(new GeneralEmailValidator());
+            this.RuleFor(person => person.GetEmailAddress())
+                .SetValidator(new GeneralEmailValidator())
+                .WithName("E-mail address");
         }
     }
 }

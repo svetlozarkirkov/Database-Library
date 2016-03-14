@@ -8,7 +8,16 @@
     [Validator(typeof(OccupationInterfaceValidator))]
     public abstract class OccupationBase : IOccupation
     {
-        public string CompanyName { get; set; }
-        public IAddress CompanyAddress { get; set; }
+        private readonly string _companyName;
+        private IAddress _companyAddress;
+
+        protected OccupationBase(string companyName)
+        {
+            this._companyName = companyName;
+        }
+
+        public string GetCompanyName() => this._companyName;
+
+        public IAddress GetCompanyAddress() => this._companyAddress;
     }
 }

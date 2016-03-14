@@ -4,6 +4,6 @@
 
     public interface IPerson
     {
-        IPersonInfo PersonInfo { get; }
+        IPersonInfo GetPersonInfo();
     }
 }

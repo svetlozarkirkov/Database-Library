@@ -8,8 +8,9 @@
     {
         public MultipleAddressesPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.Addresses)
-                .SetCollectionValidator(new AddressInterfaceValidator());
+            this.RuleFor(person => person.GetAddresses())
+                .SetCollectionValidator(new AddressInterfaceValidator())
+                .WithName("Addresses");
         }
     }
 }

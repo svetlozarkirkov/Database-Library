@@ -7,21 +7,25 @@
     {
         public AddressInterfaceValidator()
         {
-            this.RuleFor(personAddress => personAddress.Country)
+            this.RuleFor(personAddress => personAddress.GetCountry())
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .WithName("Country");
 
-            this.RuleFor(personAddress => personAddress.City)
+            this.RuleFor(personAddress => personAddress.GetCity())
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .WithName("City");
 
-            this.RuleFor(personAddress => personAddress.Street)
+            this.RuleFor(personAddress => personAddress.GetStreet())
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .WithName("Street");
 
-            this.RuleFor(personAddress => personAddress.PostCode)
+            this.RuleFor(personAddress => personAddress.GetPostCode())
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .WithName("Post code");
         }
     }
 }

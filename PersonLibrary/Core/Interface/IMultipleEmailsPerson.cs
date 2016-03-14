@@ -5,6 +5,10 @@
 
     public interface IMultipleEmailsPerson : IPerson
     {
-        IEnumerable<IGeneralEmail> Emails { get; }
+        List<IGeneralEmail> GetEmailAddresses();
+
+        void AddEmailAddress(IGeneralEmail email);
+
+        void RemoveEmailAddress(int index);
     }
 }

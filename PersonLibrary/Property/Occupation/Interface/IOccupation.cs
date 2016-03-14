@@ -4,8 +4,8 @@
 
     public interface IOccupation
     {
-        string CompanyName { get; set; }
+        string GetCompanyName();
 
-        IAddress CompanyAddress { get; set; }
+        IAddress GetCompanyAddress();
     }
 }

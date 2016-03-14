@@ -7,6 +7,10 @@
     {
         public PhoneInterfaceValidator()
         {
+            this.RuleFor(phone => phone.GetPhoneNumber())
+                .NotNull()
+                .NotEmpty()
+                .WithName("Phone");
         }
     }
 }

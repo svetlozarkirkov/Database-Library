@@ -8,8 +8,9 @@
     {
         public MultipleEmailsPersonInterfaceValidator()
         {
-            this.RuleFor(person => person.Emails)
-                .SetCollectionValidator(new GeneralEmailValidator());
+            this.RuleFor(person => person.GetEmailAddresses())
+                .SetCollectionValidator(new GeneralEmailValidator())
+                .WithName("E-mail addresses");
         }
     }
 }

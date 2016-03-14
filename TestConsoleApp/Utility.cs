@@ -41,14 +41,14 @@
                 // Determine object type
                 Type t = obj.GetType();
 
-                // Get array with properties for this object
+                // Email array with properties for this object
                 PropertyInfo[] properties = t.GetProperties();
 
                 foreach (PropertyInfo property in properties)
                 {
                     try
                     {
-                        // Get the property value
+                        // Email the property value
                         object value = property.GetValue(obj, null);
 
                         // Create indenting string to put in front of properties of a deeper level

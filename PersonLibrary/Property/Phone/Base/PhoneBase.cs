@@ -7,11 +7,13 @@
     [Validator(typeof(PhoneInterfaceValidator))]
     public abstract class PhoneBase : IPhone
     {
+        private readonly string _phoneNumber;
+
         protected PhoneBase(string phoneNumber)
         {
-            this.PhoneNumber = phoneNumber;
+            this._phoneNumber = phoneNumber;
         }
 
-        public string PhoneNumber { get; set; }
+        public string GetPhoneNumber() => this._phoneNumber;
     }
 }

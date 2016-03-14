@@ -5,6 +5,10 @@
 
     public interface IMultipleAddressesPerson : IPerson
     {
-        IEnumerable<IAddress> Addresses { get; }
+        List<IAddress> GetAddresses();
+
+        void AddAddress(IAddress address);
+
+        void RemoveAddress(int index);
     }
 }

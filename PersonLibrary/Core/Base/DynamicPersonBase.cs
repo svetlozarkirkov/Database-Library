@@ -37,7 +37,7 @@
             }
             else
             {
-                throw new ArgumentException("Cannot remove property that does not exist.");
+                throw new ArgumentException("Cannot remove property - it does not exist.");
             }
         }
 

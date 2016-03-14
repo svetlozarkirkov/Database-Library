@@ -8,13 +8,15 @@
     [Validator(typeof(PersonInterfaceValidator))]
     public abstract class PersonBase : IPerson
     {
+        private readonly IPersonInfo _personInfo;
+
         protected PersonBase(IPersonInfo personInfo)
         {
-            this.PersonInfo = personInfo;
+            this._personInfo = personInfo;
         }
 
-        public IPersonInfo PersonInfo { get; }
+        public IPersonInfo GetPersonInfo() => this._personInfo;
 
-        public override string ToString() => this.PersonInfo.ToString();
+        public override string ToString() => this._personInfo.ToString();
     }
 }

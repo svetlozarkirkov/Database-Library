@@ -7,6 +7,8 @@
     [Validator(typeof(OccupationInterfaceValidator))]
     public class Occupation : OccupationBase
     {
-
+        public Occupation(string companyName) : base(companyName)
+        {
+        }
     }
 }

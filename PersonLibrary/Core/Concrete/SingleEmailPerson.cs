@@ -10,14 +10,16 @@
     [Validator(typeof(SingleEmailPersonInterfaceValidator))]
     public class SingleEmailPerson : PersonBase, ISingleEmailPerson
     {
+        private readonly IGeneralEmail _emailAddress;
+
         public SingleEmailPerson(IPersonInfo personInfo, IGeneralEmail email)
             : base(personInfo)
         {
-            this.Email = email;
+            this._emailAddress = email;
         }
 
-        public IGeneralEmail Email { get; set; }
+        public IGeneralEmail GetEmailAddress() => this._emailAddress;
 
-        public override string ToString() => base.ToString() + "\nEmail: " + this.Email;
+        public override string ToString() => base.ToString() + "\nEmail: " + this._emailAddress;
     }
 }

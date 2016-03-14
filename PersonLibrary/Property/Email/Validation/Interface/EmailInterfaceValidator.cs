@@ -7,7 +7,10 @@
     {
         public EmailInterfaceValidator()
         {
-            this.RuleFor(email => email.EmailAddress).NotNull().NotEmpty();
+            this.RuleFor(email => email.Email())
+                .NotNull()
+                .NotEmpty()
+                .WithName("E-mail");
         }
     }
 }
