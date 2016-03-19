@@ -4,9 +4,9 @@ Database Library
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/Database-Library.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/Database-Library)
 
-## Download
+<!--## Download
 * [Version 0.2](https://github.com/svetlozarkirkov/Database-Library/archive/master.zip)
-* Other Versions
+* Other Versions-->
 
 ## Usage
 ```$ git clone https://github.com/svetlozarkirkov/Database-Library.git
@@ -27,7 +27,7 @@ Database Library
 * see [LICENSE](https://github.com/svetlozarkirkov/Database-Library/blob/master/LICENSE.md) file
 
 ## Version 
-* Version 0.2
+* Version: alpha
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/svetlozarkirkov/Database-Library/blob/master/INSTRUCTIONS.md) file
