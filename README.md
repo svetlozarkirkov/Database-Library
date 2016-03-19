@@ -36,7 +36,7 @@ Database Library
 #### Developer/Company
 * Homepage: http://svetlozarkirkov.xyz
 * e-mail: svetlozark@gmail.com
-* Twitter: [@twitterhandle](https://twitter.com/svetlozarkirkov "svetlozarkirkov on twitter")
+* Twitter: [@svetlozarkirkov](https://twitter.com/svetlozarkirkov "svetlozarkirkov on twitter")
 * other communication/social media
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=svetlozarkirkov&url=https://github.com/svetlozarkirkov/Database-Library&title=Database-Library&language=&tags=github&category=software)

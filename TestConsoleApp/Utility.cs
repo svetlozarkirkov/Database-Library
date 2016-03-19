@@ -3,15 +3,17 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Reflection;
     using System.Text;
 
     internal static class Utility
     {
+        /// <exception cref="TargetInvocationException">A static initializer is invoked and throws an exception. </exception>
         internal static IEnumerable<Type> GetParentTypes(Type type)
         {
             // is there any base type?
-            if ((type == null) || (type.BaseType == null))
+            if (type?.BaseType == null)
             {
                 yield break;
             }
@@ -31,31 +33,33 @@
             }
         }
 
-        internal static string var_dump(object obj, int recursion)
+        internal static string VarDump(object obj, int recursion)
         {
-            StringBuilder result = new StringBuilder();
+            Contract.Requires(obj != null);
+            Contract.Ensures(Contract.Result<string>() != null);
+            var result = new StringBuilder();
 
             // Protect the method against endless recursion
             if (recursion < 5)
             {
                 // Determine object type
-                Type t = obj.GetType();
+                var t = obj.GetType();
 
                 // Email array with properties for this object
-                PropertyInfo[] properties = t.GetProperties();
+                var properties = t.GetProperties();
 
-                foreach (PropertyInfo property in properties)
+                foreach (var property in properties)
                 {
+                    const string spaces = "|   ";
                     try
                     {
                         // Email the property value
-                        object value = property.GetValue(obj, null);
+                        var value = property.GetValue(obj, null);
 
                         // Create indenting string to put in front of properties of a deeper level
                         // We'll need this when we display the property name and value
-                        string indent = String.Empty;
-                        string spaces = "|   ";
-                        string trail = "|...";
+                        var indent = string.Empty;
+                        const string trail = "|...";
 
                         if (recursion > 0)
                         {
@@ -65,8 +69,8 @@
                         if (value != null)
                         {
                             // If the value is a string, add quotation marks
-                            string displayValue = value.ToString();
-                            if (value is string) displayValue = String.Concat('"', displayValue, '"');
+                            var displayValue = value.ToString();
+                            if (value is string) displayValue = string.Concat('"', displayValue, '"');
 
                             // Add property name and value to return string
                             result.AppendFormat("{0}{1} = {2}\n", indent, property.Name, displayValue);
@@ -75,31 +79,31 @@
                             {
                                 if (!(value is ICollection))
                                 {
-                                    // Call var_dump() again to list child properties
+                                    // Call VarDump() again to list child properties
                                     // This throws an exception if the current property value
                                     // is of an unsupported type (eg. it has not properties)
-                                    result.Append(var_dump(value, recursion + 1));
+                                    result.Append(VarDump(value, recursion + 1));
                                 }
                                 else
                                 {
                                     // 2009-07-29: added support for collections
                                     // The value is a collection (eg. it's an arraylist or generic list)
                                     // so loop through its elements and dump their properties
-                                    int elementCount = 0;
-                                    foreach (object element in ((ICollection) value))
+                                    var elementCount = 0;
+                                    foreach (var element in ((ICollection) value))
                                     {
-                                        string elementName = String.Format("{0}[{1}]", property.Name, elementCount);
+                                        string elementName = $"{property.Name}[{elementCount}]";
                                         indent = new StringBuilder(trail).Insert(0, spaces, recursion).ToString();
 
                                         // Display the collection element name and type
-                                        result.AppendFormat("{0}{1} = {2}\n", indent, elementName, element.ToString());
+                                        result.AppendFormat("{0}{1} = {2}\n", indent, elementName, element);
 
                                         // Display the child properties
-                                        result.Append(var_dump(element, recursion + 2));
+                                        result.Append(VarDump(element, recursion + 2));
                                         elementCount++;
                                     }
 
-                                    result.Append(var_dump(value, recursion + 1));
+                                    result.Append(VarDump(value, recursion + 1));
                                 }
                             }
                             catch
