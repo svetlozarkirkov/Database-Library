@@ -1,10 +1,10 @@
 language: csharp
-solution: ./project-database-library.sln
+solution: ./database-library.sln
  
 install:
   - sudo apt-get install nunit-console
-  - nuget restore ./project-database-library.sln
+  - nuget restore ./database-library.sln
  
 script:
-  - xbuild ./project-database-library.sln
+  - xbuild ./database-library.sln
   - nunit-console ./PersonLibrary.Tests/bin/Debug/PersonLibrary.Tests.dll
