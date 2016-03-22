@@ -11,25 +11,25 @@
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("Country");
+                .WithName("Country"); // Not L10N
 
             this.RuleFor(personAddress => personAddress.City)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("City");
+                .WithName("City"); // Not L10N
 
             this.RuleFor(personAddress => personAddress.Street)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("Street");
+                .WithName("Street"); // Not L10N
 
             this.RuleFor(personAddress => personAddress.PostCode)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("Post code");
+                .WithName("Post code"); // Not L10N
         }
     }
 }

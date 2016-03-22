@@ -11,7 +11,8 @@
             this.RuleFor(phone => phone.PhoneNumber)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .WithName("Phone"); // Not L10N
         }
     }
 }

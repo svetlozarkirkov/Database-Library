@@ -4,21 +4,22 @@
     using PersonLibrary.Property.Address.Interface;
     using PersonLibrary.Property.Occupation.Interface;
     using PersonLibrary.Property.Occupation.Validation.Interface;
+    using PersonLibrary.Property.Phone.Interface;
 
     [Validator(typeof(OccupationInterfaceValidator))]
     public abstract class OccupationBase : IOccupation
     {
-        private readonly string _companyName;
-        private readonly IAddress _companyAddress;
-
-        protected OccupationBase(string companyName, IAddress companyAddress)
+        protected OccupationBase(string companyName, IAddress companyAddress, IPhone companyPhone)
         {
-            this._companyName = companyName;
-            this._companyAddress = companyAddress;
+            this.CompanyName = companyName;
+            this.CompanyAddress = companyAddress;
+            this.CompanyPhone = companyPhone;
         }
 
-        public string CompanyName => this._companyName;
+        public string CompanyName { get; }
 
-        public IAddress CompanyAddress => this._companyAddress;
+        public IAddress CompanyAddress { get; }
+
+        public IPhone CompanyPhone { get; }
     }
 }

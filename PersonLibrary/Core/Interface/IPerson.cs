@@ -1,9 +1,9 @@
 ﻿namespace PersonLibrary.Core.Interface
 {
-    using PersonLibrary.Property.PersonInfo.Interface;
+    using PersonLibrary.Property.PrimaryInfo.Interface;
 
     public interface IPerson
     {
-        IPersonInfo PersonInfo { get; }
+        IPrimaryInfo PrimaryInfo { get; }
     }
 }

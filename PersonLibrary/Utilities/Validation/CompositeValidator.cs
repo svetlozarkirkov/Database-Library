@@ -10,6 +10,7 @@
     {
         private readonly List<IValidator> _additionalValidators = new List<IValidator>();
 
+        /// <exception cref="NotSupportedException">Condition.</exception>
         protected void RegisterBaseValidator<TBase>(IValidator<TBase> validator)
         {
             // Ensure that we've registered a compatible validator.
@@ -19,10 +20,8 @@
             }
             else
             {
-                throw new NotSupportedException(string.Format(
-                    "Type {0} is not a base-class or interface implemented by {1}.",
-                    typeof(TBase).Name,
-                    typeof(T).Name));
+                throw new NotSupportedException(
+                    $"Type {typeof (TBase).Name} is not a base-class or interface implemented by {typeof (T).Name}.");
             }
         }
 

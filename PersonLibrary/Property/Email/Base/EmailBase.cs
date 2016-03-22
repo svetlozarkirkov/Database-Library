@@ -7,15 +7,13 @@
     [Validator(typeof(EmailInterfaceValidator))]
     public abstract class EmailBase : IEmail
     {
-        private readonly string _email;
-
         protected EmailBase(string emailAddress)
         {
-            this._email = emailAddress;
+            this.Email = emailAddress;
         }
 
-        public string Email => this._email;
+        public string Email { get; }
 
-        public override string ToString() => $"Email: [ {this._email} ]";
+        public override string ToString() => $"[ {this.Email} ]";
     }
 }

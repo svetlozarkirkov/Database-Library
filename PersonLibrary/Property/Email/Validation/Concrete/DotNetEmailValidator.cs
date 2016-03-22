@@ -11,7 +11,7 @@
         /// Dot Net Email Regex
         /// </summary>
         private const string DotNetEmailRegex =
-            "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+            "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"; // Not L10N
 
         public DotNetEmailValidator()
         {
@@ -19,7 +19,7 @@
 
             this.RuleFor(email => email.Email)
                 .Matches(DotNetEmailRegex)
-                .WithName("E-mail");
+                .WithName("E-mail"); // Not L10N
         }
     }
 }

@@ -11,7 +11,7 @@
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("E-mail");
+                .WithName("E-mail"); // Not L10N
         }
     }
 }

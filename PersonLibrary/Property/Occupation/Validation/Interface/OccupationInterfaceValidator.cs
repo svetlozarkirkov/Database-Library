@@ -12,13 +12,19 @@
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .NotEmpty()
-                .WithName("Company name");
+                .WithName("Company name"); // Not L10N
 
             this.RuleFor(occ => occ.CompanyAddress)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .SetValidator(new AddressInterfaceValidator())
-                .WithName("Company address");
+                .WithName("Company address"); // Not L10N
+
+            this.RuleFor(occ => occ.CompanyPhone)
+                .Cascade(CascadeMode.StopOnFirstFailure)
+                .NotNull()
+                .NotEmpty()
+                .WithName("Company phone"); // Not L10N
         }
     }
 }

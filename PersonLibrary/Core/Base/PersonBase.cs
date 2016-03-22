@@ -3,19 +3,18 @@
     using FluentValidation.Attributes;
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Core.Validation.Interface;
-    using PersonLibrary.Property.PersonInfo.Interface;
+    using PersonLibrary.Property.PrimaryInfo.Interface;
 
     [Validator(typeof(PersonInterfaceValidator))]
     public abstract class PersonBase : IPerson
     {
-        private readonly IPersonInfo _personInfo;
-
-        protected PersonBase(IPersonInfo personInfo)
+        protected PersonBase(IPrimaryInfo primaryInfo)
         {
-            this._personInfo = personInfo;
+            this.PrimaryInfo = primaryInfo;
         }
-        public IPersonInfo PersonInfo => this._personInfo;
 
-        public override string ToString() => this._personInfo.ToString();
+        public IPrimaryInfo PrimaryInfo { get; }
+
+        public override string ToString() => this.PrimaryInfo.ToString();
     }
 }
