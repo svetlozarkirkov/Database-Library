@@ -12,7 +12,7 @@
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotNull()
                 .SetValidator(new PrimaryInfoInterfaceValidator())
-                .WithName("Person info"); // Not L10N
+                .WithName("Primary info"); // Not L10N
         }
     }
 }

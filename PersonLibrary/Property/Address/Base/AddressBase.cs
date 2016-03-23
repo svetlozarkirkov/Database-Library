@@ -1,5 +1,6 @@
 ﻿namespace PersonLibrary.Property.Address.Base
 {
+    using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
     using PersonLibrary.Property.Address.Interface;
     using PersonLibrary.Property.Address.Validation.Interface;
@@ -9,10 +10,23 @@
     {
         protected AddressBase(string country, string city, string street, string postCode)
         {
+            Contract.Requires(country != null);
+            Contract.Requires(city != null);
+            Contract.Requires(street != null);
+            Contract.Requires(postCode != null);
             this.Country = country;
             this.City = city;
             this.Street = street;
             this.PostCode = postCode;
+        }
+
+        [ContractInvariantMethod]
+        private void ObjectInvariant()
+        {
+            Contract.Invariant(Country != null);
+            Contract.Invariant(City != null);
+            Contract.Invariant(Street != null);
+            Contract.Invariant(PostCode != null);
         }
 
         public string Country { get; }

@@ -1,5 +1,6 @@
 ﻿namespace PersonLibrary.Property.Email.Validation.Concrete
 {
+    using System;
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
     using PersonLibrary.Property.Email.Validation.Interface;
@@ -13,6 +14,7 @@
         private const string DotNetEmailRegex =
             "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"; // Not L10N
 
+        /// <exception cref="NotSupportedException">Condition.</exception>
         public DotNetEmailValidator()
         {
             this.RegisterBaseValidator(new EmailInterfaceValidator());

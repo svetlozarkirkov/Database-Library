@@ -2,12 +2,18 @@
 {
     using FluentValidation;
     using PersonLibrary.Core.Interface;
+    using PersonLibrary.Property.Core.Validation.Interface;
 
     public class DynamicPersonInterfaceValidator : AbstractValidator<IDynamicPerson>
     {
         public DynamicPersonInterfaceValidator()
         {
-            // TODO: iterate each property and validate it using its appropriate validator
+            this.RuleForEach(p => p.Properties.Keys)
+                .NotNull()
+                .WithName("Property type"); // Not L10N
+
+            this.RuleFor(p => p.Properties.Values)
+                .SetCollectionValidator(new PropertyInterfaceValidator());
         }
     }
 }

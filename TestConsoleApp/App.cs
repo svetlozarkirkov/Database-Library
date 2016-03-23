@@ -5,7 +5,6 @@
     using FluentValidation.Attributes;
     using PersonLibrary.Core.Concrete;
     using PersonLibrary.Property.Address.Concrete;
-    using PersonLibrary.Property.Core;
     using PersonLibrary.Property.Email.Concrete;
     using PersonLibrary.Property.PrimaryInfo.Concrete;
 
@@ -15,13 +14,13 @@
         {
             var person = new DynamicPerson();
 
-            var address = new Address("", "New York", "Brooklyn St. 12", null);
-            var primaryInfo = new PrimaryInfo("John", "", "Doe", "1234567890");
-            var email = new GeneralEmail("@yahoo.com");
+            var address = new Address(null, "New York", "Brooklyn St. 12", null);
+            var primaryInfo = new PrimaryInfo("John", null, "Doe", "1234567890");
+            var email = new GeneralEmail("johndoe@yahoo.com");
 
-            person.AddProperty(PropertyType.Address, address);
-            person.AddProperty(PropertyType.PrimaryInfo, primaryInfo);
-            person.AddProperty(PropertyType.Email, null);
+            person.AddProperty(address);
+            person.AddProperty(primaryInfo);
+            person.AddProperty(email);
 
             Console.WriteLine(person);
 
@@ -29,7 +28,7 @@
             // and putting the results into a list
             var validatorFactory = new AttributedValidatorFactory();
             var combinedResults =
-                (from prop in person.GetProperties()
+                (from prop in person.Properties
                  let currentValidator = validatorFactory.GetValidator(prop.Value.GetType())
                  select currentValidator.Validate(prop.Value)).ToList();
 

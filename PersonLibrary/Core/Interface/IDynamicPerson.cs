@@ -1,15 +1,17 @@
 ﻿namespace PersonLibrary.Core.Interface
 {
+    using System;
     using System.Collections.Generic;
-    using PersonLibrary.Property.Core;
     using PersonLibrary.Property.Core.Interface;
 
     public interface IDynamicPerson
     {
-        Dictionary<PropertyType, IProperty> GetProperties();
+        Dictionary<Type, IProperty> Properties { get; }
 
-        void AddProperty(PropertyType propertyType, IProperty property);
+        void AddProperty(IProperty property);
 
-        void RemoveProperty(PropertyType propertyType);
+        IProperty GetProperty(Type propertyType);
+
+        void RemoveProperty(Type propertyType);
     }
 }

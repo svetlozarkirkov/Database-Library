@@ -35,8 +35,8 @@ Global
 		UpdateAssemblyVersion = True
 		UpdateAssemblyFileVersion = True
 		UpdateAssemblyInfoVersion = True
-		AssemblyVersionSettings = Increment.Increment.Increment.Increment
-		AssemblyFileVersionSettings = Increment.Increment.Increment.Increment
-		AssemblyInfoVersionSettings = Increment.Increment.Increment.Increment
+		AssemblyVersionSettings = IncrementOnDemand.MonthStamp.DayStamp.Increment
+		AssemblyFileVersionSettings = IncrementOnDemand.MonthStamp.DayStamp.Increment
+		AssemblyInfoVersionSettings = IncrementOnDemand.MonthStamp.DayStamp.Increment
 	EndGlobalSection
 EndGlobal

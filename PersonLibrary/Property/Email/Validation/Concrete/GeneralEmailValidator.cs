@@ -1,5 +1,6 @@
 ﻿namespace PersonLibrary.Property.Email.Validation.Concrete
 {
+    using System;
     using FluentValidation;
     using PersonLibrary.Property.Email.Interface;
     using PersonLibrary.Property.Email.Validation.Interface;
@@ -19,6 +20,7 @@
             ":(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[" +
             "\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"; // Not L10N
 
+        /// <exception cref="NotSupportedException">Condition.</exception>
         public GeneralEmailValidator()
         {
             this.RegisterBaseValidator(new EmailInterfaceValidator());
