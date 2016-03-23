@@ -8,12 +8,12 @@
 
     public class DotNetEmailValidator : CompositeValidator<IDotNetEmail>
     {
-        /// <summary>
-        /// Dot Net Email Regex
-        /// </summary>
         private const string DotNetEmailRegex =
             "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"; // Not L10N
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DotNetEmailValidator"/> class.
+        /// </summary>
         /// <exception cref="NotSupportedException">Condition.</exception>
         public DotNetEmailValidator()
         {

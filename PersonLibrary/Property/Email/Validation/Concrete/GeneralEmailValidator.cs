@@ -6,11 +6,12 @@
     using PersonLibrary.Property.Email.Validation.Interface;
     using PersonLibrary.Utilities.Validation;
 
+    /// <summary>
+    /// Class GeneralEmailValidator.
+    /// </summary>
+    /// <seealso cref="Utilities.Validation.CompositeValidator{IGeneralEmail}" />
     public class GeneralEmailValidator : CompositeValidator<IGeneralEmail>
     {
-        /// <summary>
-        /// General Email Regex (RFC 5322 Official Standard)
-        /// </summary>
         private const string GeneralEmailRegex =
             "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)" +
             "*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]" +
@@ -20,6 +21,9 @@
             ":(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[" +
             "\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"; // Not L10N
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeneralEmailValidator"/> class.
+        /// </summary>
         /// <exception cref="NotSupportedException">Condition.</exception>
         public GeneralEmailValidator()
         {

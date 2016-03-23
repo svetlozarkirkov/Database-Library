@@ -3,8 +3,15 @@
     using FluentValidation;
     using PersonLibrary.Property.Address.Interface;
 
+    /// <summary>
+    /// Class AddressInterfaceValidator.
+    /// </summary>
+    /// <seealso cref="FluentValidation.AbstractValidator{IAddress}" />
     public class AddressInterfaceValidator : AbstractValidator<IAddress>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddressInterfaceValidator"/> class.
+        /// </summary>
         public AddressInterfaceValidator()
         {
             this.RuleFor(personAddress => personAddress.Country)

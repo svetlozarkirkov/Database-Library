@@ -4,8 +4,15 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.Core.Validation.Interface;
 
+    /// <summary>
+    /// Class DynamicPersonInterfaceValidator.
+    /// </summary>
+    /// <seealso cref="FluentValidation.AbstractValidator{IDynamicPerson}" />
     public class DynamicPersonInterfaceValidator : AbstractValidator<IDynamicPerson>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DynamicPersonInterfaceValidator"/> class.
+        /// </summary>
         public DynamicPersonInterfaceValidator()
         {
             this.RuleForEach(p => p.Properties.Keys)

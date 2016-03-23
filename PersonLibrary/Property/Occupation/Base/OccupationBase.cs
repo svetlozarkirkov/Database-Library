@@ -7,6 +7,10 @@
     using PersonLibrary.Property.Occupation.Validation.Interface;
     using PersonLibrary.Property.Phone.Interface;
 
+    /// <summary>
+    /// Class OccupationBase.
+    /// </summary>
+    /// <seealso cref="PersonLibrary.Property.Occupation.Interface.IOccupation" />
     [Validator(typeof(OccupationInterfaceValidator))]
     public abstract class OccupationBase : IOccupation
     {
@@ -28,10 +32,22 @@
             Contract.Invariant(CompanyPhone != null);
         }
 
+        /// <summary>
+        /// Gets the name of the company.
+        /// </summary>
+        /// <value>The name of the company.</value>
         public string CompanyName { get; }
 
+        /// <summary>
+        /// Gets the company address.
+        /// </summary>
+        /// <value>The company address.</value>
         public IAddress CompanyAddress { get; }
 
+        /// <summary>
+        /// Gets the company phone.
+        /// </summary>
+        /// <value>The company phone.</value>
         public IPhone CompanyPhone { get; }
     }
 }

@@ -5,6 +5,10 @@
     using PersonLibrary.Property.Address.Interface;
     using PersonLibrary.Property.Address.Validation.Interface;
 
+    /// <summary>
+    /// Class AddressBase.
+    /// </summary>
+    /// <seealso cref="PersonLibrary.Property.Address.Interface.IAddress" />
     [Validator(typeof(AddressInterfaceValidator))]
     public abstract class AddressBase : IAddress
     {
@@ -29,14 +33,34 @@
             Contract.Invariant(PostCode != null);
         }
 
+        /// <summary>
+        /// Gets the country.
+        /// </summary>
+        /// <value>The country.</value>
         public string Country { get; }
 
+        /// <summary>
+        /// Gets the city.
+        /// </summary>
+        /// <value>The city.</value>
         public string City { get; }
 
+        /// <summary>
+        /// Gets the street.
+        /// </summary>
+        /// <value>The street.</value>
         public string Street { get; }
 
+        /// <summary>
+        /// Gets the post code.
+        /// </summary>
+        /// <value>The post code.</value>
         public string PostCode { get; }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString() => $"{{ [ Country: {this.Country} ] [ City: {this.City} ] [ Street: {this.Street} ] [ PostCode: {this.PostCode} ] }}";
     }
 }

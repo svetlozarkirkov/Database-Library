@@ -4,8 +4,15 @@
     using PersonLibrary.Core.Interface;
     using PersonLibrary.Property.PrimaryInfo.Validation.Interface;
 
+    /// <summary>
+    /// Class PersonInterfaceValidator.
+    /// </summary>
+    /// <seealso cref="FluentValidation.AbstractValidator{IPerson}" />
     public class PersonInterfaceValidator : AbstractValidator<IPerson>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonInterfaceValidator"/> class.
+        /// </summary>
         public PersonInterfaceValidator()
         {
             this.RuleFor(p => p.PrimaryInfo)

@@ -4,8 +4,15 @@
     using PersonLibrary.Property.Address.Validation.Interface;
     using PersonLibrary.Property.Occupation.Interface;
 
+    /// <summary>
+    /// Class OccupationInterfaceValidator.
+    /// </summary>
+    /// <seealso cref="FluentValidation.AbstractValidator{IOccupation}" />
     public class OccupationInterfaceValidator : AbstractValidator<IOccupation>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccupationInterfaceValidator"/> class.
+        /// </summary>
         public OccupationInterfaceValidator()
         {
             this.RuleFor(occ => occ.CompanyName)

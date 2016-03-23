@@ -10,6 +10,10 @@
     using PersonLibrary.ExceptionHandling.Concrete;
     using PersonLibrary.Property.Core.Interface;
 
+    /// <summary>
+    /// Class DynamicPersonBase.
+    /// </summary>
+    /// <seealso cref="PersonLibrary.Core.Interface.IDynamicPerson" />
     [Validator(typeof(DynamicPersonInterfaceValidator))]
     public abstract class DynamicPersonBase : IDynamicPerson
     {
@@ -24,12 +28,20 @@
             Contract.Invariant(Properties != null);
         }
 
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <value>The properties.</value>
         public Dictionary<Type, IProperty> Properties { get; }
 
+        /// <summary>
+        /// Adds the property.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <exception cref="PropertyIsNullException">Property is null.</exception>
         /// <exception cref="ArgumentException">An element with the same key already exists in the <see cref="T:System.Collections.Generic.IDictionary`2" />.</exception>
         /// <exception cref="NotSupportedException">The <see cref="T:System.Collections.Generic.IDictionary`2" /> is read-only.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="property" /> is null.</exception>
-        /// <exception cref="PropertyIsNullException">Property is null.</exception>
         public void AddProperty(IProperty property)
         {
             Contract.Requires(property != null);
@@ -51,11 +63,16 @@
             }
         }
 
+        /// <summary>
+        /// Gets the property.
+        /// </summary>
+        /// <param name="propertyType">Type of the property.</param>
+        /// <returns>IProperty.</returns>
         /// <exception cref="PropertyTypeIsNullException">Condition.</exception>
         /// <exception cref="PropertyNotFoundException">Property not found.</exception>
-        /// <exception cref="ArgumentNullException"><paramref name="propertyType" /> is null.</exception>
-        /// <exception cref="KeyNotFoundException">The property is retrieved and <paramref name="propertyType" /> is not found.</exception>
-        /// <exception cref="NotSupportedException">The property is set and the <see cref="T:System.Collections.Generic.IDictionary`2" /> is read-only.</exception>
+        /// <exception cref="ArgumentNullException">Condition.</exception>
+        /// <exception cref="KeyNotFoundException">Property not found.</exception>
+        /// <exception cref="NotSupportedException"><paramref name="propertyType" /> is null.</exception>
         public IProperty GetProperty(Type propertyType)
         {
             if (propertyType == null)
@@ -70,10 +87,14 @@
             return this.Properties[propertyType];
         }
 
+        /// <summary>
+        /// Removes the property.
+        /// </summary>
+        /// <param name="propertyType">Type of the property.</param>
+        /// <exception cref="PropertyTypeIsNullException">Property type is null.</exception>
+        /// <exception cref="PropertyNotFoundException">Condition.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="propertyType" /> is null.</exception>
         /// <exception cref="NotSupportedException">The <see cref="T:System.Collections.Generic.IDictionary`2" /> is read-only.</exception>
-        /// <exception cref="PropertyNotFoundException">Condition.</exception>
-        /// <exception cref="PropertyTypeIsNullException">Property type is null.</exception>
         public void RemoveProperty(Type propertyType)
         {
             Contract.Requires(propertyType != null);

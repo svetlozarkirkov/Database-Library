@@ -3,8 +3,15 @@
     using FluentValidation;
     using PersonLibrary.Property.PrimaryInfo.Interface;
 
+    /// <summary>
+    /// Class PrimaryInfoInterfaceValidator.
+    /// </summary>
+    /// <seealso cref="FluentValidation.AbstractValidator{IPrimaryInfo}" />
     public class PrimaryInfoInterfaceValidator : AbstractValidator<IPrimaryInfo>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrimaryInfoInterfaceValidator"/> class.
+        /// </summary>
         public PrimaryInfoInterfaceValidator()
         {
             this.RuleFor(primaryInfo => primaryInfo.FirstName)

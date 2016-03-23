@@ -5,6 +5,10 @@
     using PersonLibrary.Property.Phone.Interface;
     using PersonLibrary.Property.Phone.Validation.Interface;
 
+    /// <summary>
+    /// Class PhoneBase.
+    /// </summary>
+    /// <seealso cref="PersonLibrary.Property.Phone.Interface.IPhone" />
     [Validator(typeof(PhoneInterfaceValidator))]
     public abstract class PhoneBase : IPhone
     {
@@ -20,6 +24,10 @@
             Contract.Invariant(PhoneNumber != null);
         }
 
+        /// <summary>
+        /// Gets the phone number.
+        /// </summary>
+        /// <value>The phone number.</value>
         public string PhoneNumber { get; }
     }
 }

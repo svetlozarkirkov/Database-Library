@@ -6,10 +6,20 @@
     using FluentValidation;
     using FluentValidation.Results;
 
+    /// <summary>
+    /// Class CompositeValidator.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="FluentValidation.AbstractValidator{T}" />
     public abstract class CompositeValidator<T> : AbstractValidator<T>
     {
         private readonly List<IValidator> _additionalValidators = new List<IValidator>();
 
+        /// <summary>
+        /// Registers the base validator.
+        /// </summary>
+        /// <typeparam name="TBase">The type of the t base.</typeparam>
+        /// <param name="validator">The validator.</param>
         /// <exception cref="NotSupportedException">Condition.</exception>
         protected void RegisterBaseValidator<TBase>(IValidator<TBase> validator)
         {
@@ -25,6 +35,11 @@
             }
         }
 
+        /// <summary>
+        /// Validates the specified instance.
+        /// </summary>
+        /// <param name="context">Validation Context</param>
+        /// <returns>A ValidationResult object containing any validation failures.</returns>
         public override ValidationResult Validate(ValidationContext<T> context)
         {
             var mainErrors = base.Validate(context).Errors;
