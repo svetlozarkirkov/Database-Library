@@ -9,7 +9,7 @@
     /// </summary>
     /// <seealso cref="System.ArgumentNullException" />
     [Serializable]
-    internal class PropertyTypeIsNullException : ArgumentNullException
+    public class PropertyTypeIsNullException : ArgumentNullException
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyTypeIsNullException" /> class.

@@ -1,4 +1,6 @@
-﻿namespace TestConsoleApp
+﻿using PersonLibrary.ExceptionHandling.Concrete;
+
+namespace TestConsoleApp
 {
     using System;
     using System.Linq;

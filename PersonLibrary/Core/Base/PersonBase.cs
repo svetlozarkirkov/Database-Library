@@ -12,7 +12,7 @@
     [Validator(typeof(PersonInterfaceValidator))]
     public abstract class PersonBase : IPerson
     {
-        protected internal PersonBase(IPrimaryInfo primaryInfo)
+        protected PersonBase(IPrimaryInfo primaryInfo)
         {
             this.PrimaryInfo = primaryInfo;
         }

@@ -14,7 +14,7 @@
     [Validator(typeof(OccupationInterfaceValidator))]
     public abstract class OccupationBase : IOccupation
     {
-        protected internal OccupationBase
+        protected OccupationBase
             (string companyName, IAddress companyAddress, IPhone companyPhone)
         {
             Contract.Requires(companyName != null);

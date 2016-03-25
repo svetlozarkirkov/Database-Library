@@ -17,7 +17,7 @@
     [Validator(typeof(DynamicPersonInterfaceValidator))]
     public abstract class DynamicPersonBase : IDynamicPerson
     {
-        protected internal DynamicPersonBase()
+        protected DynamicPersonBase()
         {
             this.Properties = new Dictionary<Type, IProperty>();
         }

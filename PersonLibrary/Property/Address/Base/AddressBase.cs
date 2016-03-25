@@ -12,7 +12,7 @@
     [Validator(typeof(AddressInterfaceValidator))]
     public abstract class AddressBase : IAddress
     {
-        protected internal AddressBase(string country, string city, string street, string postCode)
+        protected AddressBase(string country, string city, string street, string postCode)
         {
             Contract.Requires(country != null);
             Contract.Requires(city != null);

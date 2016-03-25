@@ -9,7 +9,7 @@
     /// </summary>
     /// <seealso cref="System.Exception" />
     [Serializable]
-    internal class PropertyNotFoundException : Exception
+    public class PropertyNotFoundException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyNotFoundException" /> class.

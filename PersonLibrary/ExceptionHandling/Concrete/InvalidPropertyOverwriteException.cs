@@ -9,7 +9,7 @@
     /// </summary>
     /// <seealso cref="System.InvalidOperationException" />
     [Serializable]
-    internal class InvalidPropertyOverwriteException : InvalidOperationException
+    public class InvalidPropertyOverwriteException : InvalidOperationException
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidPropertyOverwriteException"/> class.
