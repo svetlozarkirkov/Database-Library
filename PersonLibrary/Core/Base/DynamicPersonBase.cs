@@ -17,7 +17,7 @@
     [Validator(typeof(DynamicPersonInterfaceValidator))]
     public abstract class DynamicPersonBase : IDynamicPerson
     {
-        protected DynamicPersonBase()
+        protected internal DynamicPersonBase()
         {
             this.Properties = new Dictionary<Type, IProperty>();
         }
@@ -35,14 +35,16 @@
         public Dictionary<Type, IProperty> Properties { get; }
 
         /// <summary>
-        /// Adds the property.
+        /// Adds the given property to the person.
         /// </summary>
-        /// <param name="property">The property.</param>
+        /// <param name="property">The property to be added.</param>
+        /// <param name="replaceIfExists">Whether to replace the existing property.</param>
         /// <exception cref="PropertyIsNullException">Property is null.</exception>
         /// <exception cref="ArgumentException">An element with the same key already exists in the <see cref="T:System.Collections.Generic.IDictionary`2" />.</exception>
         /// <exception cref="NotSupportedException">The <see cref="T:System.Collections.Generic.IDictionary`2" /> is read-only.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="property" /> is null.</exception>
-        public void AddProperty(IProperty property)
+        /// <exception cref="InvalidPropertyOverwriteException">Cannot overwrite existing property.</exception>
+        public void AddProperty(IProperty property, bool replaceIfExists = true)
         {
             Contract.Requires(property != null);
 
@@ -59,7 +61,14 @@
             }
             else
             {
-                this.Properties[propertyType] = property;
+                if (replaceIfExists)
+                {
+                    this.Properties[propertyType] = property;
+                }
+                else
+                {
+                    throw new InvalidPropertyOverwriteException("Cannot overwrite existing property."); // Not L10N
+                }
             }
         }
 
@@ -79,6 +88,7 @@
             {
                 throw new PropertyTypeIsNullException(nameof(propertyType), "Property Type is null."); // Not L10N
             }
+
             if (!this.Properties.ContainsKey(propertyType))
             {
                 throw new PropertyNotFoundException("Property not found."); // Not L10N
@@ -120,7 +130,7 @@
             var result = new StringBuilder();
             foreach (var property in this.Properties)
             {
-                result.Append($"{{\n\t[ Property Type: {property.Key.Name} ]\n\t[ Value: {property.Value} ]\n\r}}\n");
+                result.Append($"{{\n\t[ Property Type: {property.Key} ]\n\t[ Value: {property.Value} ]\n\r}}\n");
             }
 
             return result.ToString();

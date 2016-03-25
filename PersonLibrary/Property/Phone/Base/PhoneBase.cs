@@ -12,7 +12,7 @@
     [Validator(typeof(PhoneInterfaceValidator))]
     public abstract class PhoneBase : IPhone
     {
-        protected PhoneBase(string phoneNumber)
+        protected internal PhoneBase(string phoneNumber)
         {
             Contract.Requires(phoneNumber != null);
             this.PhoneNumber = phoneNumber;

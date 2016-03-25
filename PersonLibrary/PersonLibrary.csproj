@@ -51,6 +51,7 @@
     <Compile Include="Core\Interface\IPerson.cs" />
     <Compile Include="Core\Validation\Interface\DynamicPersonInterfaceValidator.cs" />
     <Compile Include="Core\Validation\Interface\PersonInterfaceValidator.cs" />
+    <Compile Include="ExceptionHandling\Concrete\InvalidPropertyOverwriteException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyIsNullException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyNotFoundException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyTypeIsNullException.cs" />

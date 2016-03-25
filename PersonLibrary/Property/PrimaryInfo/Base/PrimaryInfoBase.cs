@@ -12,7 +12,7 @@
     [Validator(typeof(PrimaryInfoInterfaceValidator))]
     public abstract class PrimaryInfoBase : IPrimaryInfo
     {
-        protected PrimaryInfoBase(string firstName, string middleName, string lastName, string egn)
+        protected internal PrimaryInfoBase(string firstName, string middleName, string lastName, string egn)
         {
             Contract.Requires(firstName != null);
             Contract.Requires(middleName != null);

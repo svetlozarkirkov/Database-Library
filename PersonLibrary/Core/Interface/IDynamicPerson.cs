@@ -19,7 +19,7 @@
         /// Adds the property.
         /// </summary>
         /// <param name="property">The property.</param>
-        void AddProperty(IProperty property);
+        void AddProperty(IProperty property, bool replaceIfExists);
 
         /// <summary>
         /// Gets the property.

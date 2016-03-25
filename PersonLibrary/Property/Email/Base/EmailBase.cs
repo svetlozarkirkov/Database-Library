@@ -12,7 +12,7 @@
     [Validator(typeof(EmailInterfaceValidator))]
     public abstract class EmailBase : IEmail
     {
-        protected EmailBase(string emailAddress)
+        protected internal EmailBase(string emailAddress)
         {
             Contract.Requires(emailAddress != null);
             this.Email = emailAddress;

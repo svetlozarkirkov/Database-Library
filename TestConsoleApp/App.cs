@@ -17,10 +17,12 @@
             var address = new Address(null, "New York", "Brooklyn St. 12", null);
             var primaryInfo = new PrimaryInfo("John", null, "Doe", "1234567890");
             var email = new GeneralEmail("johndoe@yahoo.com");
+            var dotEmail = new DotNetEmail("unknown@.org");
 
             person.AddProperty(address);
             person.AddProperty(primaryInfo);
             person.AddProperty(email);
+            person.AddProperty(dotEmail);
 
             Console.WriteLine(person);
 
