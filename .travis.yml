@@ -3,8 +3,8 @@ solution: ./database-library.sln
  
 install:
   - nuget restore ./database-library.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory testrunner
  
 script:
   - xbuild /p:Configuration=Release ./database-library.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./PersonLibrary.Tests/bin/Release/PersonLibrary.Tests.dll
+  - mono ./testrunner/NUnit.Runners.3.2.0/tools/nunit-console.exe ./PersonLibrary.Tests/bin/Release/PersonLibrary.Tests.dll
