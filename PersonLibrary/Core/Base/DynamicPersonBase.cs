@@ -22,12 +22,6 @@
             this.Properties = new Dictionary<Type, IProperty>();
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(Properties != null);
-        }
-
         /// <summary>
         /// Gets the properties.
         /// </summary>

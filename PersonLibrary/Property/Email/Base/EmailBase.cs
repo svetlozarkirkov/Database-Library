@@ -18,12 +18,6 @@
             this.Email = emailAddress;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(Email != null);
-        }
-
         /// <summary>
         /// Gets the email.
         /// </summary>

@@ -24,15 +24,6 @@
             this.Egn = egn;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(FirstName != null);
-            Contract.Invariant(MiddleName != null);
-            Contract.Invariant(LastName != null);
-            Contract.Invariant(Egn != null);
-        }
-
         /// <summary>
         /// Gets the first name.
         /// </summary>

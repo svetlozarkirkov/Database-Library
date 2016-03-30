@@ -18,12 +18,6 @@
             this.PhoneNumber = phoneNumber;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(PhoneNumber != null);
-        }
-
         /// <summary>
         /// Gets the phone number.
         /// </summary>

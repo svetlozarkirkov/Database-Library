@@ -25,14 +25,6 @@
             this.CompanyPhone = companyPhone;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(CompanyName != null);
-            Contract.Invariant(CompanyAddress != null);
-            Contract.Invariant(CompanyPhone != null);
-        }
-
         /// <summary>
         /// Gets the name of the company.
         /// </summary>

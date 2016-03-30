@@ -24,15 +24,6 @@
             this.PostCode = postCode;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(Country != null);
-            Contract.Invariant(City != null);
-            Contract.Invariant(Street != null);
-            Contract.Invariant(PostCode != null);
-        }
-
         /// <summary>
         /// Gets the country.
         /// </summary>
