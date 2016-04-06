@@ -1,14 +1,13 @@
-﻿using PersonLibrary.ExceptionHandling.Concrete;
-
-namespace TestConsoleApp
+﻿namespace TestConsoleApp
 {
     using System;
     using System.Linq;
     using FluentValidation.Attributes;
-    using PersonLibrary.Core.Concrete;
-    using PersonLibrary.Property.Address.Concrete;
-    using PersonLibrary.Property.Email.Concrete;
-    using PersonLibrary.Property.PrimaryInfo.Concrete;
+    using Person.Core.Concrete;
+    using Person.Property.Address.Concrete;
+    using Person.Property.Email.Concrete;
+    using Person.Property.PrimaryInfo.Concrete;
+
 
     internal class App
     {

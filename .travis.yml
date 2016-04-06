@@ -10,4 +10,4 @@ before_script:
   - nuget restore database-library.sln
 
 after_script:
-  - nunit-console PersonLibrary.Tests/bin/Debug/PersonLibrary.Tests.dll
+  - nunit-console Person.Tests/bin/Debug/Person.Tests.dll
