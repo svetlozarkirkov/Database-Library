@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using Person.Property.Address.Interface;
-
-namespace Person.Property.Address.Validation.Interface
+﻿namespace Person.Property.Address.Validation.Interface
 {
+    using FluentValidation;
+    using Person.Property.Address.Interface;
+
     /// <summary>
     /// Class AddressInterfaceValidator.
     /// </summary>

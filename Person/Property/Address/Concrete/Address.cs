@@ -1,9 +1,9 @@
-﻿using FluentValidation.Attributes;
-using Person.Property.Address.Base;
-using Person.Property.Address.Validation.Interface;
-
-namespace Person.Property.Address.Concrete
+﻿namespace Person.Property.Address.Concrete
 {
+    using FluentValidation.Attributes;
+    using Person.Property.Address.Base;
+    using Person.Property.Address.Validation.Interface;
+
     /// <summary>
     /// Class Address.
     /// </summary>

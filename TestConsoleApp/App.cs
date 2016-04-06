@@ -8,7 +8,6 @@
     using Person.Property.Email.Concrete;
     using Person.Property.PrimaryInfo.Concrete;
 
-
     internal class App
     {
         private static void Main()

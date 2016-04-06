@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using Person.Property.Core.Interface;
-
-namespace Person.Property.Core.Validation.Interface
+﻿namespace Person.Property.Core.Validation.Interface
 {
+    using FluentValidation;
+    using Person.Property.Core.Interface;
+
     /// <summary>
     /// Class PropertyInterfaceValidator.
     /// </summary>

@@ -1,7 +1,7 @@
-﻿using Person.Property.Core.Interface;
-
-namespace Person.Property.Email.Interface
+﻿namespace Person.Property.Email.Interface
 {
+    using Person.Property.Core.Interface;
+
     /// <summary>
     /// Interface IEmail
     /// </summary>

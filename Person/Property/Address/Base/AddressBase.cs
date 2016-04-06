@@ -1,10 +1,10 @@
-﻿using System.Diagnostics.Contracts;
-using FluentValidation.Attributes;
-using Person.Property.Address.Interface;
-using Person.Property.Address.Validation.Interface;
-
-namespace Person.Property.Address.Base
+﻿namespace Person.Property.Address.Base
 {
+    using System.Diagnostics.Contracts;
+    using FluentValidation.Attributes;
+    using Person.Property.Address.Interface;
+    using Person.Property.Address.Validation.Interface;
+
     /// <summary>
     /// Class AddressBase.
     /// </summary>

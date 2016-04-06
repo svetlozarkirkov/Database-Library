@@ -1,11 +1,11 @@
-﻿using System;
-using FluentValidation;
-using Person.Property.Email.Interface;
-using Person.Property.Email.Validation.Interface;
-using Person.Utilities.Validation;
-
-namespace Person.Property.Email.Validation.Concrete
+﻿namespace Person.Property.Email.Validation.Concrete
 {
+    using System;
+    using FluentValidation;
+    using Person.Property.Email.Interface;
+    using Person.Property.Email.Validation.Interface;
+    using Person.Utilities.Validation;
+
     public class DotNetEmailValidator : CompositeValidator<IDotNetEmail>
     {
         private const string DotNetEmailRegex =

@@ -1,10 +1,10 @@
-﻿using FluentValidation.Attributes;
-using Person.Property.Email.Base;
-using Person.Property.Email.Interface;
-using Person.Property.Email.Validation.Concrete;
-
-namespace Person.Property.Email.Concrete
+﻿namespace Person.Property.Email.Concrete
 {
+    using FluentValidation.Attributes;
+    using Person.Property.Email.Base;
+    using Person.Property.Email.Interface;
+    using Person.Property.Email.Validation.Concrete;
+
     /// <summary>
     /// Class GeneralEmail.
     /// </summary>

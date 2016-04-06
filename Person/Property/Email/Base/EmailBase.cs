@@ -1,10 +1,10 @@
-﻿using System.Diagnostics.Contracts;
-using FluentValidation.Attributes;
-using Person.Property.Email.Interface;
-using Person.Property.Email.Validation.Interface;
-
-namespace Person.Property.Email.Base
+﻿namespace Person.Property.Email.Base
 {
+    using System.Diagnostics.Contracts;
+    using FluentValidation.Attributes;
+    using Person.Property.Email.Interface;
+    using Person.Property.Email.Validation.Interface;
+
     /// <summary>
     /// Class EmailBase.
     /// </summary>

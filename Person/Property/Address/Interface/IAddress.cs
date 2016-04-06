@@ -1,7 +1,7 @@
-﻿using Person.Property.Core.Interface;
-
-namespace Person.Property.Address.Interface
+﻿namespace Person.Property.Address.Interface
 {
+    using Person.Property.Core.Interface;
+
     /// <summary>
     /// Interface IAddress
     /// </summary>
