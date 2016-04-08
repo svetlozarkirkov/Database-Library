@@ -67,15 +67,9 @@
     <Compile Include="Property\Core\Interface\IProperty.cs" />
     <Compile Include="Property\Core\Validation\Interface\PropertyInterfaceValidator.cs" />
     <Compile Include="Property\Email\Base\EmailBase.cs" />
-    <Compile Include="Property\Email\Concrete\DotNetEmail.cs" />
     <Compile Include="Property\Email\Concrete\Email.cs" />
-    <Compile Include="Property\Email\Concrete\GeneralEmail.cs" />
     <Compile Include="Property\Email\Interface\IEmail.cs" />
-    <Compile Include="Property\Email\Interface\IDotNetEmail.cs" />
-    <Compile Include="Property\Email\Interface\IGeneralEmail.cs" />
     <Compile Include="Property\Email\Validation\Interface\EmailInterfaceValidator.cs" />
-    <Compile Include="Property\Email\Validation\Concrete\DotNetEmailValidator.cs" />
-    <Compile Include="Property\Email\Validation\Concrete\GeneralEmailValidator.cs" />
     <Compile Include="Property\Occupation\Base\OccupationBase.cs" />
     <Compile Include="Property\Occupation\Concrete\Occupation.cs" />
     <Compile Include="Property\Occupation\Interface\IOccupation.cs" />
@@ -88,7 +82,6 @@
     <Compile Include="Property\Phone\Concrete\Phone.cs" />
     <Compile Include="Property\Phone\Interface\IPhone.cs" />
     <Compile Include="Property\Phone\Validation\Interface\PhoneInterfaceValidator.cs" />
-    <Compile Include="Utilities\Validation\CompositeValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Property\Address\Validation\Concrete\" />
@@ -102,6 +95,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{0bfe81be-ccd9-41cc-aa3e-9201a424c407}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

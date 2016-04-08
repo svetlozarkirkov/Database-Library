@@ -124,7 +124,7 @@
             var result = new StringBuilder();
             foreach (var property in this.Properties)
             {
-                result.Append($"{{\n\t[ Property Type: {property.Key} ]\n\t[ Value: {property.Value} ]\n\r}}\n");
+                result.Append($"{{\n\t[ Property Type: {property.Key.Name} ]\n\t[ Value: {property.Value} ]\n\r}}\n");
             }
 
             return result.ToString();

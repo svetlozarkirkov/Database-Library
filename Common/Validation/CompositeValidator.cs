@@ -1,4 +1,4 @@
-﻿namespace Person.Utilities.Validation
+﻿namespace Common.Validation
 {
     using System;
     using System.Collections.Generic;

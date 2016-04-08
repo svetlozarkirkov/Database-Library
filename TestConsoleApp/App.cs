@@ -1,4 +1,7 @@
-﻿namespace TestConsoleApp
+﻿using Person.Property.Occupation.Concrete;
+using Person.Property.Phone.Concrete;
+
+namespace TestConsoleApp
 {
     using System;
     using System.Linq;
@@ -16,13 +19,17 @@
 
             var address = new Address(null, "New York", "Brooklyn St. 12", null);
             var primaryInfo = new PrimaryInfo("John", null, "Doe", "1234567890");
-            var email = new GeneralEmail("johndoe@yahoo.com");
-            var dotEmail = new DotNetEmail("unknown@.org");
+            var email = new Email("johndoe@yahoo.com");
+            var occupation = new Occupation(
+                "CIA",
+                new Address("USA", "Langley", "Secret", "Secret"),
+                new Phone("24162742")
+            );
 
             person.AddProperty(address);
             person.AddProperty(primaryInfo);
             person.AddProperty(email);
-            person.AddProperty(dotEmail);
+            person.AddProperty(occupation);
 
             Console.WriteLine(person);
 

@@ -5,9 +5,9 @@
     using Person.Property.Email.Validation.Interface;
 
     [Validator(typeof(EmailInterfaceValidator))]
-    internal class Email : EmailBase
+    public class Email : EmailBase
     {
-        protected Email(string emailAddress) : base(emailAddress)
+        public Email(string emailAddress) : base(emailAddress)
         {
         }
     }
