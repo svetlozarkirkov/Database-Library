@@ -5,10 +5,10 @@
     using System.Diagnostics.Contracts;
     using System.Text;
     using FluentValidation.Attributes;
-    using Person.Core.Interface;
-    using Person.Core.Validation.Interface;
+    using Person.Core.Contracts;
+    using Person.Core.Validation.Contracts;
     using Person.ExceptionHandling.Concrete;
-    using Person.Property.Core.Interface;
+    using Person.Property.Core.Contracts;
 
     /// <summary>
     /// Class DynamicPersonBase.
@@ -44,7 +44,7 @@
 
             if (property == null)
             {
-                throw new PropertyIsNullException(nameof(property), "Property is null."); // Not L10N
+                throw new PropertyIsNullException(nameof(property), "Property is null.");
             }
 
             var propertyType = property.GetType();
@@ -61,7 +61,7 @@
                 }
                 else
                 {
-                    throw new InvalidPropertyOverwriteException("Cannot overwrite existing property."); // Not L10N
+                    throw new InvalidPropertyOverwriteException("Cannot overwrite existing property.");
                 }
             }
         }
@@ -80,12 +80,12 @@
         {
             if (propertyType == null)
             {
-                throw new PropertyTypeIsNullException(nameof(propertyType), "Property Type is null."); // Not L10N
+                throw new PropertyTypeIsNullException(nameof(propertyType), "Property Type is null.");
             }
 
             if (!this.Properties.ContainsKey(propertyType))
             {
-                throw new PropertyNotFoundException("Property not found."); // Not L10N
+                throw new PropertyNotFoundException("Property not found.");
             }
 
             return this.Properties[propertyType];
@@ -105,7 +105,7 @@
 
             if (propertyType == null)
             {
-                throw new PropertyTypeIsNullException(nameof(propertyType), "Property Type is null."); // Not L10N
+                throw new PropertyTypeIsNullException(nameof(propertyType), "Property Type is null.");
             }
 
             if (this.Properties.ContainsKey(propertyType))
@@ -114,7 +114,7 @@
             }
             else
             {
-                throw new PropertyNotFoundException(); // Not L10N
+                throw new PropertyNotFoundException();
             }
         }
 

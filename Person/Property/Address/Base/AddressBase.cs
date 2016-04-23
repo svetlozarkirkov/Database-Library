@@ -2,8 +2,8 @@
 {
     using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
-    using Person.Property.Address.Interface;
-    using Person.Property.Address.Validation.Interface;
+    using Person.Property.Address.Contracts;
+    using Person.Property.Address.Validation.Contracts;
 
     /// <summary>
     /// Class AddressBase.

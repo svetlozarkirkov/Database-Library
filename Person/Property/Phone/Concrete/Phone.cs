@@ -2,7 +2,7 @@
 {
     using FluentValidation.Attributes;
     using Person.Property.Phone.Base;
-    using Person.Property.Phone.Validation.Interface;
+    using Person.Property.Phone.Validation.Contracts;
 
     /// <summary>
     /// Class Phone.

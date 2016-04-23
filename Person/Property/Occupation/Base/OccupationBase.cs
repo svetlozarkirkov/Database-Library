@@ -2,10 +2,10 @@
 {
     using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
-    using Person.Property.Address.Interface;
-    using Person.Property.Occupation.Interface;
-    using Person.Property.Occupation.Validation.Interface;
-    using Person.Property.Phone.Interface;
+    using Person.Property.Address.Contracts;
+    using Person.Property.Occupation.Contracts;
+    using Person.Property.Occupation.Validation.Contracts;
+    using Person.Property.Phone.Contracts;
 
     /// <summary>
     /// Class OccupationBase.
@@ -14,6 +14,13 @@
     [Validator(typeof(OccupationInterfaceValidator))]
     public abstract class OccupationBase : IOccupation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccupationBase"/> class.
+        /// </summary>
+        /// <param name="companyName">Name of the company.</param>
+        /// <param name="companyAddress">The company address.</param>
+        /// <param name="companyPhone">The company phone.</param>
+        /// TODO Edit XML Comment Template for #ctor
         protected OccupationBase
             (string companyName, IAddress companyAddress, IPhone companyPhone)
         {

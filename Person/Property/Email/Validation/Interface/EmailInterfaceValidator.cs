@@ -1,7 +1,7 @@
 ﻿namespace Person.Property.Email.Validation.Interface
 {
     using FluentValidation;
-    using Person.Property.Email.Interface;
+    using Person.Property.Email.Contracts;
 
     /// <summary>
     /// Class EmailInterfaceValidator.

@@ -2,7 +2,7 @@
 {
     using FluentValidation.Attributes;
     using Core.Base;
-    using Core.Validation.Interface;
+    using Core.Validation.Contracts;
 
     /// <summary>
     /// Class DynamicPerson.

@@ -1,9 +1,9 @@
 ﻿namespace Person.Core.Base
 {
     using FluentValidation.Attributes;
-    using Person.Core.Interface;
-    using Person.Core.Validation.Interface;
-    using Person.Property.PrimaryInfo.Interface;
+    using Person.Core.Contracts;
+    using Person.Core.Validation.Contracts;
+    using Person.Property.PrimaryInfo.Contracts;
 
     /// <summary>
     /// Class PersonBase.

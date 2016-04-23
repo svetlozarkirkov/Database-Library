@@ -2,8 +2,8 @@
 {
     using FluentValidation.Attributes;
     using Core.Base;
-    using Core.Validation.Interface;
-    using Property.PrimaryInfo.Interface;
+    using Core.Validation.Contracts;
+    using Property.PrimaryInfo.Contracts;
 
     /// <summary>
     /// Class Person.

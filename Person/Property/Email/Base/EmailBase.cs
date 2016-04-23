@@ -2,7 +2,7 @@
 {
     using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
-    using Person.Property.Email.Interface;
+    using Person.Property.Email.Contracts;
     using Person.Property.Email.Validation.Interface;
 
     /// <summary>
@@ -12,6 +12,11 @@
     [Validator(typeof(EmailInterfaceValidator))]
     public abstract class EmailBase : IEmail
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmailBase"/> class.
+        /// </summary>
+        /// <param name="emailAddress">The email address.</param>
+        /// TODO Edit XML Comment Template for #ctor
         protected EmailBase(string emailAddress)
         {
             Contract.Requires(emailAddress != null);

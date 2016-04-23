@@ -2,8 +2,8 @@
 {
     using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
-    using Person.Property.Phone.Interface;
-    using Person.Property.Phone.Validation.Interface;
+    using Person.Property.Phone.Contracts;
+    using Person.Property.Phone.Validation.Contracts;
 
     /// <summary>
     /// Class PhoneBase.

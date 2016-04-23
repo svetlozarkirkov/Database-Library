@@ -1,10 +1,10 @@
 ﻿namespace Person.Property.Occupation.Concrete
 {
     using FluentValidation.Attributes;
-    using Person.Property.Address.Interface;
+    using Person.Property.Address.Contracts;
     using Person.Property.Occupation.Base;
-    using Person.Property.Occupation.Validation.Interface;
-    using Person.Property.Phone.Interface;
+    using Person.Property.Occupation.Validation.Contracts;
+    using Person.Property.Phone.Contracts;
 
     /// <summary>
     /// Class Occupation.

@@ -36,7 +36,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.3.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PhoneNumbers, Version=7.0.9.0, Culture=neutral, processorArchitecture=MSIL">
@@ -51,10 +51,10 @@
     <Compile Include="Core\Base\PersonBase.cs" />
     <Compile Include="Core\Concrete\DynamicPerson.cs" />
     <Compile Include="Core\Concrete\Person.cs" />
-    <Compile Include="Core\Interface\IDynamicPerson.cs" />
-    <Compile Include="Core\Interface\IPerson.cs" />
-    <Compile Include="Core\Validation\Interface\DynamicPersonInterfaceValidator.cs" />
-    <Compile Include="Core\Validation\Interface\PersonInterfaceValidator.cs" />
+    <Compile Include="Core\Contracts\IDynamicPerson.cs" />
+    <Compile Include="Core\Contracts\IPerson.cs" />
+    <Compile Include="Core\Validation\Contracts\DynamicPersonInterfaceValidator.cs" />
+    <Compile Include="Core\Validation\Contracts\PersonInterfaceValidator.cs" />
     <Compile Include="ExceptionHandling\Concrete\InvalidPropertyOverwriteException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyIsNullException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyNotFoundException.cs" />
@@ -62,31 +62,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property\Address\Base\AddressBase.cs" />
     <Compile Include="Property\Address\Concrete\Address.cs" />
-    <Compile Include="Property\Address\Interface\IAddress.cs" />
-    <Compile Include="Property\Address\Validation\Interface\AddressInterfaceValidator.cs" />
-    <Compile Include="Property\Core\Interface\IProperty.cs" />
-    <Compile Include="Property\Core\Validation\Interface\PropertyInterfaceValidator.cs" />
+    <Compile Include="Property\Address\Contracts\IAddress.cs" />
+    <Compile Include="Property\Address\Validation\Contracts\AddressInterfaceValidator.cs" />
+    <Compile Include="Property\Core\Contracts\IProperty.cs" />
+    <Compile Include="Property\Core\Validation\Contracts\PropertyInterfaceValidator.cs" />
     <Compile Include="Property\Email\Base\EmailBase.cs" />
     <Compile Include="Property\Email\Concrete\Email.cs" />
-    <Compile Include="Property\Email\Interface\IEmail.cs" />
+    <Compile Include="Property\Email\Contracts\IEmail.cs" />
     <Compile Include="Property\Email\Validation\Interface\EmailInterfaceValidator.cs" />
     <Compile Include="Property\Occupation\Base\OccupationBase.cs" />
     <Compile Include="Property\Occupation\Concrete\Occupation.cs" />
-    <Compile Include="Property\Occupation\Interface\IOccupation.cs" />
-    <Compile Include="Property\Occupation\Validation\Interface\OccupationInterfaceValidator.cs" />
+    <Compile Include="Property\Occupation\Contracts\IOccupation.cs" />
+    <Compile Include="Property\Occupation\Validation\Contracts\OccupationInterfaceValidator.cs" />
     <Compile Include="Property\PrimaryInfo\Base\PrimaryInfoBase.cs" />
     <Compile Include="Property\PrimaryInfo\Concrete\PrimaryInfo.cs" />
-    <Compile Include="Property\PrimaryInfo\Interface\IPrimaryInfo.cs" />
-    <Compile Include="Property\PrimaryInfo\Validation\Interface\PrimaryInfoInterfaceValidator.cs" />
+    <Compile Include="Property\PrimaryInfo\Contracts\IPrimaryInfo.cs" />
+    <Compile Include="Property\PrimaryInfo\Validation\Contracts\PrimaryInfoInterfaceValidator.cs" />
     <Compile Include="Property\Phone\Base\PhoneBase.cs" />
     <Compile Include="Property\Phone\Concrete\Phone.cs" />
-    <Compile Include="Property\Phone\Interface\IPhone.cs" />
-    <Compile Include="Property\Phone\Validation\Interface\PhoneInterfaceValidator.cs" />
+    <Compile Include="Property\Phone\Contracts\IPhone.cs" />
+    <Compile Include="Property\Phone\Validation\Contracts\PhoneInterfaceValidator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Property\Address\Validation\Concrete\" />
-    <Folder Include="Property\PrimaryInfo\Validation\Concrete\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

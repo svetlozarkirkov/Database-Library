@@ -6,7 +6,7 @@
     using NUnit.Framework;
     using Person.Core.Base;
     using Person.ExceptionHandling.Concrete;
-    using Person.Property.Core.Interface;
+    using Person.Property.Core.Contracts;
 
     [TestFixture]
     public class DynamicPersonBaseTests
@@ -14,13 +14,17 @@
         private Mock<DynamicPersonBase> _dynamicPersonBaseMock;
         private Mock<IProperty> _propertyMock;
 
+        [OneTimeSetUp]
+        public void CreateMocks()
+        {
+            this._dynamicPersonBaseMock = new Mock<DynamicPersonBase>() {CallBase = true};
+            this._propertyMock = new Mock<IProperty>() {CallBase = true};
+        }
+
         [Test]
         public void InitializedWithDefaultConstructor_PropertiesShouldNotBeNull()
         {
-            // Act
-            this._dynamicPersonBaseMock = new Mock<DynamicPersonBase>() {CallBase = true};
-
-            // Assert
+            // Act Assert
             Assert.NotNull(this._dynamicPersonBaseMock.Object.Properties);
         }
 
@@ -34,8 +38,6 @@
         public void AddProperty_ValidProperty_ShouldAddTheProperty()
         {
             // Arrange
-            this._dynamicPersonBaseMock = new Mock<DynamicPersonBase>() {CallBase = true};
-            this._propertyMock = new Mock<IProperty>();
             var mockPropertyType = this._propertyMock.Object.GetType();
 
             // Act
@@ -56,13 +58,9 @@
         public void AddProperty_ValidProperty_SamePropertyExists_OverwriteIfExistsFALSE_ShouldThrowException()
         {
             // Arrange
-            this._dynamicPersonBaseMock = new Mock<DynamicPersonBase>() {CallBase = true};
-            this._propertyMock = new Mock<IProperty>();
             this._dynamicPersonBaseMock.Object.AddProperty(this._propertyMock.Object, false);
 
-            // Act
-
-            // Assert
+            // Act Assert
             Assert.That(() =>
                 this._dynamicPersonBaseMock.Object.AddProperty(this._propertyMock.Object, false),
                 Throws.Exception.TypeOf<InvalidPropertyOverwriteException>());

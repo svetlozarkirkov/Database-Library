@@ -2,8 +2,8 @@
 {
     using System.Diagnostics.Contracts;
     using FluentValidation.Attributes;
-    using Person.Property.PrimaryInfo.Interface;
-    using Person.Property.PrimaryInfo.Validation.Interface;
+    using Person.Property.PrimaryInfo.Contracts;
+    using Person.Property.PrimaryInfo.Validation.Contracts;
 
     /// <summary>
     /// Class PrimaryInfoBase.

@@ -2,7 +2,7 @@
 {
     using FluentValidation.Attributes;
     using Person.Property.Address.Base;
-    using Person.Property.Address.Validation.Interface;
+    using Person.Property.Address.Validation.Contracts;
 
     /// <summary>
     /// Class Address.

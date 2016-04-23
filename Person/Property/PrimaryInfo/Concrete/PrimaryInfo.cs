@@ -2,7 +2,7 @@
 {
     using FluentValidation.Attributes;
     using Person.Property.PrimaryInfo.Base;
-    using Person.Property.PrimaryInfo.Validation.Interface;
+    using Person.Property.PrimaryInfo.Validation.Contracts;
 
     /// <summary>
     /// Class PrimaryInfo.
