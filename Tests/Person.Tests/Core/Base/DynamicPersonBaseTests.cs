@@ -11,21 +11,14 @@
     [TestFixture]
     public class DynamicPersonBaseTests
     {
-        private Mock<DynamicPersonBase> _dynamicPersonBaseMock;
-        private Mock<IProperty> _propertyMock;
-
-        [OneTimeSetUp]
-        public void CreateMocks()
-        {
-            this._dynamicPersonBaseMock = new Mock<DynamicPersonBase>() {CallBase = true};
-            this._propertyMock = new Mock<IProperty>() {CallBase = true};
-        }
-
         [Test]
         public void InitializedWithDefaultConstructor_PropertiesShouldNotBeNull()
         {
+            // Arrange
+            var classMock = new Mock<DynamicPersonBase>();
+
             // Act Assert
-            Assert.NotNull(this._dynamicPersonBaseMock.Object.Properties);
+            Assert.NotNull(classMock.Object.Properties);
         }
 
         /// <exception cref="ArgumentNullException"><paramref name="key" /> is null.</exception>
@@ -38,15 +31,17 @@
         public void AddProperty_ValidProperty_ShouldAddTheProperty()
         {
             // Arrange
-            var mockPropertyType = this._propertyMock.Object.GetType();
+            var classMock = new Mock<DynamicPersonBase>();
+            var propertyMock = new Mock<IProperty>();
+            var mockPropertyType = propertyMock.Object.GetType();
 
             // Act
-            this._dynamicPersonBaseMock.Object.AddProperty(this._propertyMock.Object);
+            classMock.Object.AddProperty(propertyMock.Object, false);
 
             // Assert
             Assert.AreSame(
-                this._propertyMock.Object,
-                this._dynamicPersonBaseMock.Object.Properties[mockPropertyType]);
+                propertyMock.Object,
+                classMock.Object.Properties[mockPropertyType]);
         }
 
         /// <exception cref="PropertyIsNullException">Property is null.</exception>
@@ -58,11 +53,13 @@
         public void AddProperty_ValidProperty_SamePropertyExists_OverwriteIfExistsFALSE_ShouldThrowException()
         {
             // Arrange
-            this._dynamicPersonBaseMock.Object.AddProperty(this._propertyMock.Object, false);
+            var classMock = new Mock<DynamicPersonBase>();
+            var propertyMock = new Mock<IProperty>();
+            classMock.Object.AddProperty(propertyMock.Object, false);
 
             // Act Assert
             Assert.That(() =>
-                this._dynamicPersonBaseMock.Object.AddProperty(this._propertyMock.Object, false),
+                classMock.Object.AddProperty(propertyMock.Object, false),
                 Throws.Exception.TypeOf<InvalidPropertyOverwriteException>());
         }
     }
