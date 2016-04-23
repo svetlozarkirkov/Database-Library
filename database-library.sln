@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "Tests\Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "Specs\Common.Specs\Common.Specs.csproj", "{BA65516F-C929-40CD-A453-0B086B4170BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroView", "Src\Views\MetroView\MetroView.csproj", "{BEAE0CFB-987C-429D-9D54-5532854CACD2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApp", "Src\ConsoleTestApp\ConsoleTestApp.csproj", "{8C61582E-562C-484B-8738-13C5EA330CE8}"
 EndProject
 Global
@@ -49,10 +47,6 @@ Global
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C61582E-562C-484B-8738-13C5EA330CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C61582E-562C-484B-8738-13C5EA330CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C61582E-562C-484B-8738-13C5EA330CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
