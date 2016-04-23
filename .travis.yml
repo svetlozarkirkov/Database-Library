@@ -10,5 +10,5 @@ before_script:
   - nuget restore database-library.sln
 
 after_script:
-  - nunit-console Common.Tests/bin/Debug/Common.Tests.dll
-  - nunit-console Person.Tests/bin/Debug/Person.Tests.dll
+  - nunit-console Tests/Common.Tests/bin/Debug/Common.Tests.dll
+  - nunit-console Tests/Person.Tests/bin/Debug/Person.Tests.dll
