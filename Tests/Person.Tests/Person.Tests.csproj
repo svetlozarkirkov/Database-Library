@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E65F4417-B1BC-45EC-BF99-1C76325ED501}</ProjectGuid>
+    <ProjectGuid>{D1FB76D7-882A-4579-AE7C-C6FC0B557098}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Tests</RootNamespace>
-    <AssemblyName>Common.Tests</AssemblyName>
+    <RootNamespace>Person.Tests</RootNamespace>
+    <AssemblyName>Person.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,13 +65,20 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Core\Base\DynamicPersonBaseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\Person\Person.csproj">
+      <Project>{b9941375-d0b9-46c7-91ce-28f7626266e9}</Project>
+      <Name>Person</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\MoqAnalyzer.1.0.5922.38414\analyzers\dotnet\cs\MoqAnalyzer.dll" />
+    <Analyzer Include="..\..\packages\MoqAnalyzer.1.0.5922.38414\analyzers\dotnet\cs\MoqAnalyzer.dll" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

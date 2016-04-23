@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{B9941375-D0B9-46C7-91CE-28F7626266E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Src\Person\Person.csproj", "{B9941375-D0B9-46C7-91CE-28F7626266E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Tests", "Person.Tests\Person.Tests.csproj", "{D1FB76D7-882A-4579-AE7C-C6FC0B557098}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Tests", "Tests\Person.Tests\Person.Tests.csproj", "{D1FB76D7-882A-4579-AE7C-C6FC0B557098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0BFE81BE-CCD9-41CC-AA3E-9201A424C407}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Src\Common\Common.csproj", "{0BFE81BE-CCD9-41CC-AA3E-9201A424C407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Specs", "Person.Specs\Person.Specs.csproj", "{48F3F82B-6FE9-45CA-91C0-F39E2F4A03F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Specs", "Specs\Person.Specs\Person.Specs.csproj", "{48F3F82B-6FE9-45CA-91C0-F39E2F4A03F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "Common.Tests\Common.Tests.csproj", "{E65F4417-B1BC-45EC-BF99-1C76325ED501}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "Tests\Common.Tests\Common.Tests.csproj", "{E65F4417-B1BC-45EC-BF99-1C76325ED501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "Common.Specs\Common.Specs.csproj", "{BA65516F-C929-40CD-A453-0B086B4170BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "Specs\Common.Specs\Common.Specs.csproj", "{BA65516F-C929-40CD-A453-0B086B4170BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroView", "Src\Views\MetroView\MetroView.csproj", "{BEAE0CFB-987C-429D-9D54-5532854CACD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApp", "Src\ConsoleTestApp\ConsoleTestApp.csproj", "{8C61582E-562C-484B-8738-13C5EA330CE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA65516F-C929-40CD-A453-0B086B4170BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEAE0CFB-987C-429D-9D54-5532854CACD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C61582E-562C-484B-8738-13C5EA330CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C61582E-562C-484B-8738-13C5EA330CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C61582E-562C-484B-8738-13C5EA330CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C61582E-562C-484B-8738-13C5EA330CE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

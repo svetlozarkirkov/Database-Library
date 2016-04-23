@@ -75,7 +75,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\MoqAnalyzer.1.0.5922.38414\analyzers\dotnet\cs\MoqAnalyzer.dll" />
+    <Analyzer Include="..\..\packages\MoqAnalyzer.1.0.5922.38414\analyzers\dotnet\cs\MoqAnalyzer.dll" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
