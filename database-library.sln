@@ -12,8 +12,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person.Specs", "tests\Models\Person.Specs\Person.Specs.csproj", "{48F3F82B-6FE9-45CA-91C0-F39E2F4A03F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "tests\Models\Common.Tests\Common.Tests.csproj", "{E65F4417-B1BC-45EC-BF99-1C76325ED501}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0BFE81BE-CCD9-41CC-AA3E-9201A424C407} = {0BFE81BE-CCD9-41CC-AA3E-9201A424C407}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "tests\Models\Common.Specs\Common.Specs.csproj", "{BA65516F-C929-40CD-A453-0B086B4170BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0BFE81BE-CCD9-41CC-AA3E-9201A424C407} = {0BFE81BE-CCD9-41CC-AA3E-9201A424C407}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55F5A81A-15D5-4645-93A1-5221EAD9E69F}"
 EndProject
