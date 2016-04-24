@@ -42,13 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Base\DynamicPersonBase.cs" />
-    <Compile Include="Core\Base\PersonBase.cs" />
     <Compile Include="Core\Concrete\DynamicPerson.cs" />
-    <Compile Include="Core\Concrete\Person.cs" />
     <Compile Include="Core\Contracts\IDynamicPerson.cs" />
-    <Compile Include="Core\Contracts\IPerson.cs" />
     <Compile Include="Core\Validation\Contracts\DynamicPersonInterfaceValidator.cs" />
-    <Compile Include="Core\Validation\Contracts\PersonInterfaceValidator.cs" />
     <Compile Include="ExceptionHandling\Concrete\InvalidPropertyOverwriteException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyIsNullException.cs" />
     <Compile Include="ExceptionHandling\Concrete\PropertyNotFoundException.cs" />
